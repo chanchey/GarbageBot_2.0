@@ -1,4 +1,4 @@
 import smbus
 import time
-bus = smbus.SMBus(0)
-address = 0x60
+bus = smbus.SMBus(1)
+address = 0x6b
