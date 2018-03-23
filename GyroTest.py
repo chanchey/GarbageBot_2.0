@@ -42,7 +42,7 @@ bus.write_byte_data(address, power_mgmt_1, 0)
 print "Gyroskop"
 print "--------"
  
-gyroskop_xout = read_word_2c(0x29)
+gyroskop_xout = read_word_2c(0x28)
 gyroskop_yout = read_word_2c(0x2a)
 gyroskop_zout = read_word_2c(0x2d)
  
