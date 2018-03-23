@@ -17,5 +17,4 @@ while True:
         bearing = bearing3599()     #this returns the value to 1 decimal place in degrees. 
         bear255 = bearing255()      #this returns the value as a byte between 0 and 255. 
         print bearing
-        print bear255
         time.sleep(1)
