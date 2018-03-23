@@ -36,7 +36,13 @@ def forward():
 	GPIO.output(PWMA2,0)
 	GPIO.output(PWMB1,1)
 	GPIO.output(PWMB2,0)
-
+def reverse():
+	GPIO.output(PWMA1,0)
+	GPIO.output(PWMA2,1)
+	GPIO.output(PWMB1,0)
+	GPIO.output(PWMB2,1) 
+	
+	
 def stop():
 	set_motor(0,0,0,0)
 
