@@ -34,7 +34,7 @@ def get_x_rotation(x,y,z):
     return math.degrees(radians)
  
 bus = smbus.SMBus(1) # bus = smbus.SMBus(0) fuer Revision 1
-address = 0x6b       # via i2cdetect
+address = 0x1d       # via i2cdetect
  
 # Aktivieren, um das Modul ansprechen zu koennen
 bus.write_byte_data(address, power_mgmt_1, 0)
