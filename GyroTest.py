@@ -1,7 +1,7 @@
 import smbus
 import time
 bus = smbus.SMBus(1)
-address = 0x6b
+address = 0x1d
 def bearing255():
         bear = bus.read_byte_data(address, 1)
         return bear
