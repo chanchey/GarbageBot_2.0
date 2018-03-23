@@ -57,6 +57,8 @@ def left():
 
 if __name__=="__main__":
     forward()
-    time.sleep(30)
+    time.sleep(5)
+    reverse()
+    time.sleep(5)
     stop()
 
