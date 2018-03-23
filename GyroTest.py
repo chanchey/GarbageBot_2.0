@@ -54,7 +54,7 @@ print
 print "Beschleunigungssensor"
 print "---------------------"
  
-beschleunigung_xout = read_word_2c(0x3b)
+beschleunigung_xout = read_word_2c(0x28)
 beschleunigung_yout = read_word_2c(0x3d)
 beschleunigung_zout = read_word_2c(0x3f)
  
