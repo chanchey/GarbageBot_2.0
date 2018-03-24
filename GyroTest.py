@@ -33,25 +33,25 @@ def get_x_rotation(x,y,z):
     radians = math.atan2(y, dist(x,z))
     return math.degrees(radians)
  
-bus = smbus.SMBus(1) # bus = smbus.SMBus(0) fuer Revision 1
+bus = smbus.SMBus(1) # bus 
 address = 0x6b      # via i2cdetect
  
-# Aktivieren, um das Modul ansprechen zu koennen
+# Activate to be able to address the module
 bus.write_byte_data(address, power_mgmt_1, 0)
  
-print "Gyroskop"
+print "Gyroscope"
 print "--------"
  
 gyroskop_xout = read_word_2c(0x28)
 gyroskop_yout = read_word_2c(0x2a)
 gyroskop_zout = read_word_2c(0x2d)
  
-print "gyroskop_xout: ", ("%5d" % gyroskop_xout), " skaliert: ", (gyroskop_xout / 131)
-print "gyroskop_yout: ", ("%5d" % gyroskop_yout), " skaliert: ", (gyroskop_yout / 131)
-print "gyroskop_zout: ", ("%5d" % gyroskop_zout), " skaliert: ", (gyroskop_zout / 131)
+print "gyroskop_xout: ", ("%5d" % gyroskop_xout), " scaled: ", (gyroskop_xout / 131)
+print "gyroskop_yout: ", ("%5d" % gyroskop_yout), " scaled: ", (gyroskop_yout / 131)
+print "gyroskop_zout: ", ("%5d" % gyroskop_zout), " scaled: ", (gyroskop_zout / 131)
  
 print
-print "Beschleunigungssensor"
+print "Accelerometer"
 print "---------------------"
  
 beschleunigung_xout = read_word_2c(0x28)
@@ -62,9 +62,9 @@ beschleunigung_xout_skaliert = beschleunigung_xout / 16384.0
 beschleunigung_yout_skaliert = beschleunigung_yout / 16384.0
 beschleunigung_zout_skaliert = beschleunigung_zout / 16384.0
  
-print "beschleunigung_xout: ", ("%6d" % beschleunigung_xout), " skaliert: ", beschleunigung_xout_skaliert
-print "beschleunigung_yout: ", ("%6d" % beschleunigung_yout), " skaliert: ", beschleunigung_yout_skaliert
-print "beschleunigung_zout: ", ("%6d" % beschleunigung_zout), " skaliert: ", beschleunigung_zout_skaliert
+print "accelerometer_xout: ", ("%6d" % beschleunigung_xout), " scaled: ", beschleunigung_xout_skaliert
+print "accelerometer_yout: ", ("%6d" % beschleunigung_yout), " scaled: ", beschleunigung_yout_skaliert
+print "accelerometer_zout: ", ("%6d" % beschleunigung_zout), " scaled: ", beschleunigung_zout_skaliert
  
 print "X Rotation: " , get_x_rotation(beschleunigung_xout_skaliert, beschleunigung_yout_skaliert, beschleunigung_zout_skaliert)
 print "Y Rotation: " , get_y_rotation(beschleunigung_xout_skaliert, beschleunigung_yout_skaliert, beschleunigung_zout_skaliert)
