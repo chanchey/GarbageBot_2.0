@@ -32,27 +32,27 @@ def get_y_rotation(x,y,z):
 def get_x_rotation(x,y,z):
     radians = math.atan2(y, dist(x,z))
     return math.degrees(radians)
- 
-bus = smbus.SMBus(1) # bus 
-address = 0x6b      # via i2cdetect
+While TRUE:
+    bus = smbus.SMBus(1) # bus 
+    address = 0x6b      # via i2cdetect
  
 # Activate to be able to address the module
-bus.write_byte_data(address, power_mgmt_1, 0)
+    bus.write_byte_data(address, power_mgmt_1, 0)
  
-print "Gyroscope"
-print "--------"
+    print "Gyroscope"
+    print "--------"
  
-gyroskop_xout = read_word_2c(0x28)
-gyroskop_yout = read_word_2c(0x2a)
-gyroskop_zout = read_word_2c(0x2d)
+    gyroskop_xout = read_word_2c(0x28)
+    gyroskop_yout = read_word_2c(0x2a)
+    gyroskop_zout = read_word_2c(0x2d)
  
-print "gyroskop_xout: ", ("%5d" % gyroskop_xout), " scaled: ", (gyroskop_xout / 131)
-print "gyroskop_yout: ", ("%5d" % gyroskop_yout), " scaled: ", (gyroskop_yout / 131)
-print "gyroskop_zout: ", ("%5d" % gyroskop_zout), " scaled: ", (gyroskop_zout / 131)
+    print "gyroskop_xout: ", ("%5d" % gyroskop_xout), " scaled: ", (gyroskop_xout / 131)
+    print "gyroskop_yout: ", ("%5d" % gyroskop_yout), " scaled: ", (gyroskop_yout / 131)
+    print "gyroskop_zout: ", ("%5d" % gyroskop_zout), " scaled: ", (gyroskop_zout / 131)
  
-print
-print "Accelerometer"
-print "---------------------"
+    print
+    print "Accelerometer"
+    print "---------------------"
  
 beschleunigung_xout = read_word_2c(0x28)
 beschleunigung_yout = read_word_2c(0x3d)
