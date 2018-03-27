@@ -1,43 +1,78 @@
-# -*- coding:utf-8 -*-
-#!/usr/bin/python
- 
-import smbus
-import time
-import os
-import RPi.GPIO as GPIO
- 
-# Define a class called Accel
-class Accel():
-    myBus=""
-    if GPIO.RPI_INFO['P1_REVISION'] == 1:
-        myBus=0
-    else:
-        myBus=1
-    b = smbus.SMBus(myBus)
-    def setUp(self):
-        self.b.write_byte_data(0x1D,0x16,0x55) # Setup the Mode
-        self.b.write_byte_data(0x1D,0x10,0) # Calibrate
-        self.b.write_byte_data(0x1D,0x11,0) # Calibrate
-        self.b.write_byte_data(0x1D,0x12,0) # Calibrate
-        self.b.write_byte_data(0x1D,0x13,0) # Calibrate
-        self.b.write_byte_data(0x1D,0x14,0) # Calibrate
-        self.b.write_byte_data(0x1D,0x15,0) # Calibrate
-    def getValueX(self):
-        return self.b.read_byte_data(0x1D,0x06)
-    def getValueY(self):
-        return self.b.read_byte_data(0x1D,0x07)
-    def getValueZ(self):
-        return self.b.read_byte_data(0x1D,0x08)
- 
-MMA7455 = Accel()
-MMA7455.setUp()
- 
-for a in range(10000):
-    x = MMA7455.getValueX()
-    y = MMA7455.getValueY()
-    z = MMA7455.getValueZ()
-    print("X=", x)
-    print("Y=", y)
-    print("Z=", z)
-    time.sleep(0.5)
-    os.system("clear")
+mport smbus			#import SMBus module of I2C
+from time import sleep          #import
+
+#some MPU6050 Registers and their Address
+PWR_MGMT_1   = 0x6B
+SMPLRT_DIV   = 0x19
+CONFIG       = 0x1A
+GYRO_CONFIG  = 0x1B
+INT_ENABLE   = 0x38
+ACCEL_XOUT_H = 0x3B
+ACCEL_YOUT_H = 0x3D
+ACCEL_ZOUT_H = 0x3F
+GYRO_XOUT_H  = 0x43
+GYRO_YOUT_H  = 0x45
+GYRO_ZOUT_H  = 0x47
+
+
+def MPU_Init():
+	#write to sample rate register
+	bus.write_byte_data(Device_Address, SMPLRT_DIV, 7)
+	
+	#Write to power management register
+	bus.write_byte_data(Device_Address, PWR_MGMT_1, 1)
+	
+	#Write to Configuration register
+	bus.write_byte_data(Device_Address, CONFIG, 0)
+	
+	#Write to Gyro configuration register
+	bus.write_byte_data(Device_Address, GYRO_CONFIG, 24)
+	
+	#Write to interrupt enable register
+	bus.write_byte_data(Device_Address, INT_ENABLE, 1)
+
+def read_raw_data(addr):
+	#Accelero and Gyro value are 16-bit
+        high = bus.read_byte_data(Device_Address, addr)
+        low = bus.read_byte_data(Device_Address, addr+1)
+    
+        #concatenate higher and lower value
+        value = ((high << 8) | low)
+        
+        #to get signed value from mpu6050
+        if(value > 32768):
+                value = value - 65536
+        return value
+
+
+bus = smbus.SMBus(1) 	# or bus = smbus.SMBus(0) for older version boards
+Device_Address = 0x68   # MPU6050 device address
+
+MPU_Init()
+
+print (" Reading Data of Gyroscope and Accelerometer")
+
+while True:
+	
+	#Read Accelerometer raw value
+	acc_x = read_raw_data(ACCEL_XOUT_H)
+	acc_y = read_raw_data(ACCEL_YOUT_H)
+	acc_z = read_raw_data(ACCEL_ZOUT_H)
+	
+	#Read Gyroscope raw value
+	gyro_x = read_raw_data(GYRO_XOUT_H)
+	gyro_y = read_raw_data(GYRO_YOUT_H)
+	gyro_z = read_raw_data(GYRO_ZOUT_H)
+	
+	#Full scale range +/- 250 degree/C as per sensitivity scale factor
+	Ax = acc_x/16384.0
+	Ay = acc_y/16384.0
+	Az = acc_z/16384.0
+	
+	Gx = gyro_x/131.0
+	Gy = gyro_y/131.0
+	Gz = gyro_z/131.0
+	
+
+	print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az) 	
+	sleep(1)
