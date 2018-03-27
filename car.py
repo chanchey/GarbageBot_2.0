@@ -8,9 +8,10 @@ import sys, tty, termios, time
 # motors' speed to 0
 motor1_in1_pin = 6
 motor1_in2_pin = 13
+D1=12
 io.setup(motor1_in1_pin, io.OUT)
 io.setup(motor1_in2_pin, io.OUT)
-motor1 = io.PWM(4,100)
+motor1 = GPIO.PWM(D1,500)
 motor1.start(0)
 motor1.ChangeDutyCycle(0)
 
@@ -18,17 +19,10 @@ motor2_in1_pin = 24
 motor2_in2_pin = 25
 io.setup(motor2_in1_pin, io.OUT)
 io.setup(motor2_in2_pin, io.OUT)
-motor2 = io.PWM(4,100)
+motor2 = GPIO.PWM(4,100)
 motor2.start(0)
 motor2.ChangeDutyCycle(0)
 
-# Defining the GPIO pins that will be used for the LEDs on
-# the RC car and setting the output to false
-io.setup(18, io.OUT)
-io.output(18, False)
-
-io.setup(23, io.OUT)
-io.output(23, False)
 
 # The getch method can determine which key has been pressed
 # by the user on the keyboard by accessing the system files
@@ -64,22 +58,7 @@ def motor2_reverse():
     io.output(motor2_in1_pin, False)
     io.output(motor2_in2_pin, True)
 
-# This method will toggle the lights on/off when the user
-# presses a particular key. It will then change the status
-# of the lights so it will know whether to turn them on or
-# off when it is next called.
-def toggleLights():
 
-    global lightStatus
-
-    if(lightStatus == False):
-        io.output(18, True)
-        io.output(23, True)
-        lightStatus = True
-    else:
-        io.output(18, False)
-        io.output(23, False)
-        lightStatus = False
 
 # This method will toggle the direction of the steering
 # motor. The method will determine whether the user wants
