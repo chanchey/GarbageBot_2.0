@@ -6,6 +6,7 @@ import math
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
  
+#Define Functions for Reading and Writing 
 def read_byte(reg):
     return bus.read_byte_data(address, reg)
  
@@ -32,12 +33,14 @@ def get_y_rotation(x,y,z):
 def get_x_rotation(x,y,z):
     radians = math.atan2(y, dist(x,z))
     return math.degrees(radians)
+  
+#Loop that Will Run Continuous 
 while True:
     bus = smbus.SMBus(1) # bus 
     address = 0x6b      # via i2cdetect
  
 # Activate to be able to address the module
-    bus.write_byte_data(address, power_mgmt_1, 0)
+    bus.write_byte_data(address, power_mgmt_1, 1)
  
 
  
