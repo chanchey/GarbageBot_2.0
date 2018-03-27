@@ -39,8 +39,7 @@ while True:
 # Activate to be able to address the module
     bus.write_byte_data(address, power_mgmt_1, 0)
  
-    print "Gyroscope"
-    print "--------"
+
  
     gyroskop_xout = read_word_2c(0x28)
     gyroskop_yout = read_word_2c(0x2a)
