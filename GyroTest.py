@@ -49,7 +49,7 @@ while True:
     print "Gyro X-Out: ", ("%5d" % gyroskop_xout), " Scaled: ", (gyroskop_xout / 131)
     print "Gyro Y-Out: ", ("%5d" % gyroskop_yout), " Scaled: ", (gyroskop_yout / 131)
     print "Gyro Z-Out: ", ("%5d" % gyroskop_zout), " Scaled: ", (gyroskop_zout / 131)
- 
+""" 
     print
     print "Accelerometer"
     print "---------------------"
@@ -68,3 +68,4 @@ print "accelerometer_zout: ", ("%6d" % beschleunigung_zout), " scaled: ", beschl
  
 print "X Rotation: " , get_x_rotation(beschleunigung_xout_skaliert, beschleunigung_yout_skaliert, beschleunigung_zout_skaliert)
 print "Y Rotation: " , get_y_rotation(beschleunigung_xout_skaliert, beschleunigung_yout_skaliert, beschleunigung_zout_skaliert)
+"""
