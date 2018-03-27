@@ -37,7 +37,7 @@ def getch():
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     return ch
 
-# This section of code defines the methods used to determine
+# This section of code defines the methods used to dtermine
 # whether a motor needs to spin forward or backwards. The
 # different directions are acheived by setting one of the
 # GPIO pins to true and the other to false. If the status of
