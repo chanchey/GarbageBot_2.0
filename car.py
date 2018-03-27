@@ -9,16 +9,16 @@ import sys, tty, termios, time
 motor1_in1_pin = 6
 motor1_in2_pin = 13
 D1=12
-io.setup(motor1_in1_pin, io.OUT)
-io.setup(motor1_in2_pin, io.OUT)
+GPIO.setup(motor1_in1_pin, io.OUT)
+GPIO.setup(motor1_in2_pin, io.OUT)
 motor1 = GPIO.PWM(D1,500)
 motor1.start(0)
 motor1.ChangeDutyCycle(0)
 
 motor2_in1_pin = 24
 motor2_in2_pin = 25
-io.setup(motor2_in1_pin, io.OUT)
-io.setup(motor2_in2_pin, io.OUT)
+GPIO.setup(motor2_in1_pin, GPIO.OUT)
+GPIO.setup(motor2_in2_pin, GPIO.OUT)
 motor2 = GPIO.PWM(4,100)
 motor2.start(0)
 motor2.ChangeDutyCycle(0)
@@ -43,20 +43,13 @@ def getch():
 # GPIO pins to true and the other to false. If the status of
 # both pins match, the motor will not turn.
 def motor1_forward():
-    io.output(motor1_in1_pin, True)
-    io.output(motor1_in2_pin, False)
+    GPIO.output(motor1_in1_pin, True)
+    GPIO.output(motor1_in2_pin, False)
 
 def motor1_reverse():
-    io.output(motor1_in1_pin, False)
-    io.output(motor1_in2_pin, True)
+    GPIO.output(motor1_in1_pin, False)
+    GPIO.output(motor1_in2_pin, True)
 
-def motor2_forward():
-    io.output(motor2_in1_pin, True)
-    io.output(motor2_in2_pin, False)
-
-def motor2_reverse():
-    io.output(motor2_in1_pin, False)
-    io.output(motor2_in2_pin, True)
 
 
 
@@ -92,10 +85,9 @@ def toggleSteering(direction):
 
 # Setting the PWM pins to false so the motors will not move
 # until the user presses the first key
-io.output(motor1_in1_pin, False)
-io.output(motor1_in2_pin, False)
-io.output(motor2_in1_pin, False)
-io.output(motor2_in2_pin, False)
+GPIO.output(motor1_in1_pin, False)
+GPIO.output(motor1_in2_pin, False)
+
 
 # Global variables for the status of the lights and steering
 lightStatus = False
