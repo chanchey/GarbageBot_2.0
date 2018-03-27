@@ -37,7 +37,7 @@ def get_x_rotation(x,y,z):
 #Loop that Will Run Continuous 
 while True:
     bus = smbus.SMBus(1) # bus 
-    address = 0x6b      # via i2cdetect
+    address = 0xd4      # via i2cdetect
  
 # Activate to be able to address the module
     bus.write_byte_data(address, power_mgmt_1, 1)
