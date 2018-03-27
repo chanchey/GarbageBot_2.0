@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-
+GPIO.setmode(GIPO.Board) 
 import sys, tty, termios, time
 
 # These two blocks of code configure the PWM settings for
