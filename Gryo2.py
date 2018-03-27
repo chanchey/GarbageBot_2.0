@@ -1,4 +1,4 @@
-mport smbus			#import SMBus module of I2C
+import smbus			#import SMBus module of I2C
 from time import sleep          #import
 
 #some MPU6050 Registers and their Address
