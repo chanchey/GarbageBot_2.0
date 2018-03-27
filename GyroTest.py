@@ -46,26 +46,4 @@ while True:
     gyroskop_yout = read_word_2c(0x2a)
     gyroskop_zout = read_word_2c(0x2d)
  
-    print "Gyro X-Out: ", ("%5d" % gyroskop_xout), " Scaled: ", (gyroskop_xout / 131)
-    print "Gyro Y-Out: ", ("%5d" % gyroskop_yout), " Scaled: ", (gyroskop_yout / 131)
-    print "Gyro Z-Out: ", ("%5d" % gyroskop_zout), " Scaled: ", (gyroskop_zout / 131)
-""" 
-    print
-    print "Accelerometer"
-    print "---------------------"
- 
-beschleunigung_xout = read_word_2c(0x28)
-beschleunigung_yout = read_word_2c(0x3d)
-beschleunigung_zout = read_word_2c(0x3f)
- 
-beschleunigung_xout_skaliert = beschleunigung_xout / 16384.0
-beschleunigung_yout_skaliert = beschleunigung_yout / 16384.0
-beschleunigung_zout_skaliert = beschleunigung_zout / 16384.0
- 
-print "accelerometer_xout: ", ("%6d" % beschleunigung_xout), " scaled: ", beschleunigung_xout_skaliert
-print "accelerometer_yout: ", ("%6d" % beschleunigung_yout), " scaled: ", beschleunigung_yout_skaliert
-print "accelerometer_zout: ", ("%6d" % beschleunigung_zout), " scaled: ", beschleunigung_zout_skaliert
- 
-print "X Rotation: " , get_x_rotation(beschleunigung_xout_skaliert, beschleunigung_yout_skaliert, beschleunigung_zout_skaliert)
-print "Y Rotation: " , get_y_rotation(beschleunigung_xout_skaliert, beschleunigung_yout_skaliert, beschleunigung_zout_skaliert)
-"""
+    print "X: ", ("%5d" % gyroskop_xout),"Y: ", ("%5d" % gyroskop_yout), "Z: ", ("%5d" % gyroskop_zout)
