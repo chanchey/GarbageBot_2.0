@@ -1,29 +1,37 @@
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BOARD) 
 import sys, tty, termios, time
 
-# These two blocks of code configure the PWM settings for
-# the two DC motors on the RC car. It defines the two GPIO
-# pins used for the input, starts the PWM and sets the
-# motors' speed to 0
-motor1_in1_pin = 6
-motor1_in2_pin = 13
-D1=12
-GPIO.setup(6, GPIO.OUT)
-GPIO.setup(13, GPIO.OUT)
+#Variables 
+PIN = 18
+PWMA1 = 6 
+PWMA2 = 13
+PWMB1 = 20
+PWMB2 = 21
+D1 = 12
+D2 = 26
+
+PWM = 50
+
+#Set Up Pins to work 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(PIN,GPIO.IN,GPIO.PUD_UP)
+
+#SetUp Motors 
+GPIO.setup(PWMA1,GPIO.OUT)
+GPIO.setup(PWMA2,GPIO.OUT)
+GPIO.setup(PWMB1,GPIO.OUT)
+GPIO.setup(PWMB2,GPIO.OUT)
+GPIO.setup(D1,GPIO.OUT)
+GPIO.setup(D2,GPIO.OUT)
 motor1 = GPIO.PWM(D1,500)
 motor1.start(0)
 motor1.ChangeDutyCycle(0)
-
-motor2_in1_pin = 24
-motor2_in2_pin = 25
-GPIO.setup(motor2_in1_pin, GPIO.OUT)
-GPIO.setup(motor2_in2_pin, GPIO.OUT)
-motor2 = GPIO.PWM(4,100)
+motor2 = GPIO.PWM(D2,500)
 motor2.start(0)
 motor2.ChangeDutyCycle(0)
-
-
+           
+     
 # The getch method can determine which key has been pressed
 # by the user on the keyboard by accessing the system files
 # It will then return the pressed key as a variable
