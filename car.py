@@ -142,4 +142,4 @@ while True:
     char = ""
 
 # Program will cease all GPIO activity before terminating
-io.cleanup()
+GPIO.cleanup()
