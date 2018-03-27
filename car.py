@@ -9,6 +9,10 @@ PWMB1 = 20
 PWMB2 = 21
 D1 = 12
 D2 = 26
+motor1_in1_pin = 6	
+motor1_in2_pin = 13
+motor2_in1_pin = 20	
+motor2_in2_pin = 21
 
 PWM = 50
 
