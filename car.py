@@ -1,5 +1,5 @@
-import RPi.GPIO as io
-io.setmode(io.BCM)
+import RPi.GPIO as GPIO
+
 import sys, tty, termios, time
 
 # These two blocks of code configure the PWM settings for
