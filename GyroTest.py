@@ -41,8 +41,8 @@ while True:
  
 
  
-    gyroskop_xout = read_word_2c(0x28)
-    gyroskop_yout = read_word_2c(0x2a)
+    gyroskop_xout = read_word_2c(0x29)
+    gyroskop_yout = read_word_2c(0x2b)
     gyroskop_zout = read_word_2c(0x2d)
  
     print "X: ", ("%5d" % gyroskop_xout),"Y: ", ("%5d" % gyroskop_yout), "Z: ", ("%5d" % gyroskop_zout)
