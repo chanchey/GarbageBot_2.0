@@ -120,13 +120,13 @@ while True:
 
     # The car will drive forward when the "w" key is pressed
     if(char == "w"):
-        motor2_forward()
-        motor2.ChangeDutyCycle(99)
+        motor1_forward()
+        motor1.ChangeDutyCycle(99)
 
     # The car will reverse when the "s" key is pressed
     if(char == "s"):
-        motor2_reverse()
-        motor2.ChangeDutyCycle(99)
+        motor1_reverse()
+        motor1.ChangeDutyCycle(99)
 
     # The "a" key will toggle the steering left
     if(char == "a"):
@@ -147,7 +147,7 @@ while True:
 
     # At the end of each loop the acceleration motor will stop
     # and wait for its next command
-    motor2.ChangeDutyCycle(0)
+    motor1.ChangeDutyCycle(0)
 
     # The keyboard character variable will be set to blank, ready
     # to save the next key that is pressed
