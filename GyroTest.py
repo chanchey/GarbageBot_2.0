@@ -40,7 +40,7 @@ while True:
     address = 0xd4      # via i2cdetect
  
 # Activate to be able to address the module
-    bus.write_byte_data(address, power_mgmt_1, 1)
+    bus.write_byte_data(address, power_mgmt_1, 0)
  
 
  
