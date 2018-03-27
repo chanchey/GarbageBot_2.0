@@ -9,8 +9,8 @@ import sys, tty, termios, time
 motor1_in1_pin = 6
 motor1_in2_pin = 13
 D1=12
-GPIO.setup(motor1_in1_pin, io.OUT)
-GPIO.setup(motor1_in2_pin, io.OUT)
+GPIO.setup(motor1_in1_pin, GPIO.OUT)
+GPIO.setup(motor1_in2_pin, GPIO.OUT)
 motor1 = GPIO.PWM(D1,500)
 motor1.start(0)
 motor1.ChangeDutyCycle(0)
