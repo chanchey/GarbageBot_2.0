@@ -6,9 +6,9 @@ import sys, tty, termios, time
 
 from time import sleep
 
-motorl_in1_pin = 4
+motorl_in1_pin = 6
 
-motorl_in2_pin = 17
+motorl_in2_pin = 13
 
 io.setup(motor1_in1_pin, io.OUT)
 
