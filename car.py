@@ -6,8 +6,8 @@ import sys, tty, termios, time
 # the two DC motors on the RC car. It defines the two GPIO
 # pins used for the input, starts the PWM and sets the
 # motors' speed to 0
-motor1_in1_pin = 4
-motor1_in2_pin = 17
+motor1_in1_pin = 6
+motor1_in2_pin = 13
 io.setup(motor1_in1_pin, io.OUT)
 io.setup(motor1_in2_pin, io.OUT)
 motor1 = io.PWM(4,100)
