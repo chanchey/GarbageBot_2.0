@@ -46,9 +46,9 @@ while True:
     gyroskop_yout = read_word_2c(0x2a)
     gyroskop_zout = read_word_2c(0x2d)
  
-    print "gyroskop_xout: ", ("%5d" % gyroskop_xout), " scaled: ", (gyroskop_xout / 131)
-    print "gyroskop_yout: ", ("%5d" % gyroskop_yout), " scaled: ", (gyroskop_yout / 131)
-    print "gyroskop_zout: ", ("%5d" % gyroskop_zout), " scaled: ", (gyroskop_zout / 131)
+    print "Gyro X-Out: ", ("%5d" % gyroskop_xout), " Scaled: ", (gyroskop_xout / 131)
+    print "Gyro Y-Out: ", ("%5d" % gyroskop_yout), " Scaled: ", (gyroskop_yout / 131)
+    print "Gyro Z-Out: ", ("%5d" % gyroskop_zout), " Scaled: ", (gyroskop_zout / 131)
  
     print
     print "Accelerometer"
