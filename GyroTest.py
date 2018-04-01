@@ -58,4 +58,4 @@ while True:
     accel_zout_scaled = accel_zout / 16384.0
 
 
-    print (gyro_xout, gyro_yout, gyro_zout," | ",accelx_out,accel_yout,accel_zout)
+    print (gyro_xout, gyro_yout, gyro_zout)
