@@ -75,3 +75,5 @@ while True:
 	
 
 	print(Gx,Gy,Gz)	
+	sleep(.5)
+	
