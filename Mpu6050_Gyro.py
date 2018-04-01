@@ -74,6 +74,6 @@ while True:
 	Gz = gyro_z/131.0
 	
 
-	print(Gx,Gy,Gz)	
+	print(Ax,Ay,Az)	
 	sleep(.5)
 	
