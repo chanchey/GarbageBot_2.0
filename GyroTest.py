@@ -40,7 +40,7 @@ address = 0x68       # This is the address value read via the i2cdetect command
 # Now wake the 6050 up as it starts in sleep mode
 bus.write_byte_data(address, power_mgmt_1, 0)
 
-while true 
+while True: 
 
     gyro_xout = read_word_2c(0x43)
     gyro_yout = read_word_2c(0x45)
