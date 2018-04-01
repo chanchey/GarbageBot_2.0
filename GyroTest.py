@@ -45,10 +45,7 @@ while True:
     gyro_xout = read_word_2c(0x43)
     gyro_yout = read_word_2c(0x45)
     gyro_zout = read_word_2c(0x47)
-
-
-
-
+    
     accel_xout = read_word_2c(0x3b)
     accel_yout = read_word_2c(0x3d)
     accel_zout = read_word_2c(0x3f)
@@ -59,4 +56,4 @@ while True:
 
     print "x rotation: " , get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     print "y rotation: " , get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-    sleep(.5)
+ 
