@@ -2,7 +2,7 @@
 
 This is the GITHUB Project for Senior Design Team 2 "Team Garbage Bot" 
 
-Procudure for Updating Code 
+Procedure for Updating Code 
 1) Open Code in Gituhub 
 2) Make edits and commit changes 
 3) On rasperypi navigate to cd ~/Desktop/GarbageBot_2.0
