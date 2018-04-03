@@ -40,7 +40,7 @@ try:
                 GPIO.output(B1,1)
                 GPIO.output(B2,0)
                 
-                stdscr.clear()
+                screen.clear()
                 
                 
             elif char == curses.KEY_DOWN:
@@ -49,7 +49,7 @@ try:
                 GPIO.output(B1,0)
                 GPIO.output(B2,1)
                 
-                stdscr.clear()
+                screen.clear()
                 
             elif char == curses.KEY_RIGHT:
                 GPIO.output(A1,1)
@@ -57,7 +57,7 @@ try:
                 GPIO.output(B1,0)
                 GPIO.output(B2,1)
                 
-                stdscr.clear()
+                screen.clear()
                 
             elif char == curses.KEY_LEFT:
                 GPIO.output(A1,0)
@@ -65,7 +65,7 @@ try:
                 GPIO.output(B1,1)
                 GPIO.output(B2,0)
                 
-                stdscr.clear()
+                screen.clear()
                 
             elif char == ord('s'):
                 GPIO.output(A1,0)
@@ -73,7 +73,7 @@ try:
                 GPIO.output(B1,0)
                 GPIO.output(B2,0)
                 
-                stdscr.clear()
+                screen.clear()
              
 finally:
     #Close down curses properly, inc turn echo back on!
