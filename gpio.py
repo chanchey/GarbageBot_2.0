@@ -32,26 +32,40 @@ try:
                 GPIO.output(A2,False)
                 GPIO.output(B1,True)
                 GPIO.output(B2,False)
+                
+                char = 0
+                
             elif char == curses.KEY_DOWN:
                 GPIO.output(A1,False)
                 GPIO.output(A2,True)
                 GPIO.output(B1,False)
                 GPIO.output(B2,True)
+                
+                char = 0
+                
             elif char == curses.KEY_RIGHT:
                 GPIO.output(A1,True)
                 GPIO.output(A2,False)
                 GPIO.output(B1,False)
                 GPIO.output(B2,True)
+                
+                char = 0
+                
             elif char == curses.KEY_LEFT:
                 GPIO.output(A1,False)
                 GPIO.output(A2,True)
                 GPIO.output(B1,True)
                 GPIO.output(B2,False)
+                
+                char = 0
+                
             elif char == ord('s'):
                 GPIO.output(A1,False)
                 GPIO.output(A2,False)
                 GPIO.output(B1,False)
                 GPIO.output(B2,False)
+                
+                char = 0
              
 finally:
     #Close down curses properly, inc turn echo back on!
