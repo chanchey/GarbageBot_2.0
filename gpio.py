@@ -41,6 +41,7 @@ try:
                 GPIO.output(B2,0)
                 
                 char = 0
+                
             elif char == curses.KEY_DOWN:
                 GPIO.output(A1,0)
                 GPIO.output(A2,1)
@@ -48,6 +49,7 @@ try:
                 GPIO.output(B2,1)
                 
                 char = 0
+                
             elif char == curses.KEY_RIGHT:
                 GPIO.output(A1,1)
                 GPIO.output(A2,0)
