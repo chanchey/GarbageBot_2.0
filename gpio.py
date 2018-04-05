@@ -71,7 +71,7 @@ GPIO.output(B2, False)
 #try:
 while True:
         char = getch()
-        if char == ord('q'):
+        if char == "q":
                 print 'Program Ended'
                 break
         elif char == "w":
@@ -95,22 +95,20 @@ while True:
                 left()
                 motor1.ChangeDutyCycle(99)
                 motor2.ChangeDutyCycle(99)
-                
+        time.sleep(.1)        
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)        
         char = ""        
             
                 
                 
-before terminating
+
 GPIO.cleanup()
 #finally:
     #Close down curses properly, inc turn echo back on!
     #curses.nocbreak(); screen.keypad(0); curses.echo()
     #curses.endwin()
-GPIO.output(A1,0)
-GPIO.output(A2,0)
-GPIO.output(B1,0)
-GPIO.output(B2,0)
+
 #GPIO.cleanup()
+
 
