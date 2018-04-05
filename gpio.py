@@ -1,7 +1,7 @@
 # import curses and GPIO
 import curses
 import RPi.GPIO as GPIO
-
+import time, sys, tty, termios
 A1 = 6
 A2 = 13
 B1 = 20
@@ -18,70 +18,99 @@ GPIO.setup(B1,GPIO.OUT)
 GPIO.setup(B2,GPIO.OUT)
 GPIO.setup(D1,GPIO.OUT)
 GPIO.setup(D2,GPIO.OUT)
-p1 = GPIO.PWM(D1,500)
-p2 = GPIO.PWM(D2,500)
-p1.start(50)
-p2.start(50)
+motor1 = GPIO.PWM(D1,100)
+motor2 = GPIO.PWM(D2,100)
+motor1.start(0)
+motor2.start(0)
+motor1.ChangeDutyCycle(0)
+motor2.ChangeDutyCycle(0)
 # Get the curses window, turn off echoing of keyboard to screen, turn on
 # instant (no waiting) key response, and use special values for cursor keys
-screen = curses.initscr()
-curses.noecho() 
-curses.cbreak()
-screen.keypad(True)
+#screen = curses.initscr()
+#curses.noecho() 
+#curses.cbreak()
+#screen.keypad(True)
+def getch():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(sys.stdin.fileno())
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
 
-try:
-        while True:   
-            char = screen.getch()
-            if char == ord('q'):
+def forward():
+        GPIO.output(A1, True)
+        GPIO.output(A2, False)
+        GPIO.output(B1, True)
+        GPIO.output(B2, False)
+def reverse():
+        GPIO.output(A1, False)
+        GPIO.output(A2, True)
+        GPIO.output(B1, False)
+        GPIO.output(B2, True)
+
+def left():
+        GPIO.output(A1, False)
+        GPIO.output(A2, True)
+        GPIO.output(B1, True)
+        GPIO.output(B2, False)
+
+def right():
+        GPIO.output(A1, True)
+        GPIO.output(A2, False)
+        GPIO.output(B1, False)
+        GPIO.output(B2, True)
+        
+GPIO.output(A1, False)
+GPIO.output(A2, False)
+GPIO.output(B1, False)
+GPIO.output(B2, False)
+
+#try:
+while True:
+        char = getch()
+        if char == ord('q'):
+                print 'Program Ended'
                 break
-            elif char == curses.KEY_UP:
-                GPIO.output(A1,1)
-                GPIO.output(A2,0)
-                GPIO.output(B1,1)
-                GPIO.output(B2,0)
-                
-                screen.clear()
+        elif char == "w":
+                forward()
+                motor1.ChangeDutyCycle(99)
+                motor2.ChangeDutyCycle(99)
                 
                 
-            elif char == curses.KEY_DOWN:
-                GPIO.output(A1,0)
-                GPIO.output(A2,1)
-                GPIO.output(B1,0)
-                GPIO.output(B2,1)
+        elif char == "s":
+                reverse()
+                motor1.ChangeDutyCycle(99)
+                motor2.ChangeDutyCycle(99)
+                         
                 
-                screen.clear()
+        elif char == "d":
+                right()
+                motor1.ChangeDutyCycle(99)
+                motor2.ChangeDutyCycle(99)
                 
-            elif char == curses.KEY_RIGHT:
-                GPIO.output(A1,1)
-                GPIO.output(A2,0)
-                GPIO.output(B1,0)
-                GPIO.output(B2,1)
+        elif char == "a":
+                left()
+                motor1.ChangeDutyCycle(99)
+                motor2.ChangeDutyCycle(99)
                 
-                screen.clear()
+        motor1.ChangeDutyCycle(0)
+        motor2.ChangeDutyCycle(0)        
+        char = ""        
+            
                 
-            elif char == curses.KEY_LEFT:
-                GPIO.output(A1,0)
-                GPIO.output(A2,1)
-                GPIO.output(B1,1)
-                GPIO.output(B2,0)
                 
-                screen.clear()
-                
-            elif char == ord('s'):
-                GPIO.output(A1,0)
-                GPIO.output(A2,0)
-                GPIO.output(B1,0)
-                GPIO.output(B2,0)
-                
-                screen.clear()
-             
-finally:
+before terminating
+GPIO.cleanup()
+#finally:
     #Close down curses properly, inc turn echo back on!
-    curses.nocbreak(); screen.keypad(0); curses.echo()
-    curses.endwin()
-    GPIO.output(A1,0)
-    GPIO.output(A2,0)
-    GPIO.output(B1,0)
-    GPIO.output(B2,0)
-    GPIO.cleanup()
+    #curses.nocbreak(); screen.keypad(0); curses.echo()
+    #curses.endwin()
+GPIO.output(A1,0)
+GPIO.output(A2,0)
+GPIO.output(B1,0)
+GPIO.output(B2,0)
+#GPIO.cleanup()
 
