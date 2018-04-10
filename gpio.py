@@ -43,23 +43,24 @@ def getch():
 def forward():
         GPIO.output(A1, True)
         GPIO.output(A2, False)
-        GPIO.output(B1, True)
-        GPIO.output(B2, False)
+        GPIO.output(B1, False)
+        GPIO.output(B2, True)
 def reverse():
         GPIO.output(A1, False)
         GPIO.output(A2, True)
-        GPIO.output(B1, False)
-        GPIO.output(B2, True)
-
-def left():
-        GPIO.output(A1, False)
-        GPIO.output(A2, True)
         GPIO.output(B1, True)
         GPIO.output(B2, False)
 
-def right():
+def left():
         GPIO.output(A1, True)
         GPIO.output(A2, False)
+        GPIO.output(B1, True)
+        GPIO.output(B2, False)
+        
+
+def right():
+        GPIO.output(A1, False)
+        GPIO.output(A2, True)
         GPIO.output(B1, False)
         GPIO.output(B2, True)
         
@@ -76,8 +77,8 @@ while True:
                 break
         elif char == "w":
                 forward()
-                motor1.ChangeDutyCycle(99)
-                motor2.ChangeDutyCycle(99)
+                motor1.ChangeDutyCycle(50)
+                motor2.ChangeDutyCycle(80)
                 
                 
         elif char == "s":
@@ -88,13 +89,14 @@ while True:
                 
         elif char == "d":
                 right()
-                motor1.ChangeDutyCycle(99)
-                motor2.ChangeDutyCycle(99)
+                motor1.ChangeDutyCycle(25)
+                motor2.ChangeDutyCycle(25)
                 
         elif char == "a":
                 left()
-                motor1.ChangeDutyCycle(99)
-                motor2.ChangeDutyCycle(99)
+                motor1.ChangeDutyCycle(75)
+                motor2.ChangeDutyCycle(75)
+                
         time.sleep(.1)        
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)        
