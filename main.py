@@ -68,4 +68,6 @@ def getGyro ():
 	yrot=yrot+makeMeLevelY
 	
 	return yrot
+yrot=getGyro()
+print(yrot)
 
