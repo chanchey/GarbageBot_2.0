@@ -64,7 +64,6 @@ def getGyro ():
 	xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)  
 	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
 	
-	xrot=xrot+makeMeLevelx
 	yrot=yrot+makeMeLevelY
 	
 	return yrot
