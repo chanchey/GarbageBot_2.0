@@ -1,24 +1,21 @@
-
 #!/usr/bin/python
 
-#These are the Libs I need imported for my functions to work
 import smbus
 import math
 import time
 
+#Global Variables this will modify 
+xrot=0.0;
+yrot=0.0; 
 
-#Collin's Global Variables The function will modify these to tell angle in degrees
-xrot=0.0
-yrot=0.0 
-
-#This will be used to calibrate garbage bot's center of Grav 
-makeMeLevelY = 0.0 
-makeMeLevelX = 0.0
+#Scaling Factor to level bot 
+makeMeLevelY=0.0 
+makeMeLevelx=0.0
 
 getGyro()
-print (xrot, yrot)
+print(xrot, yrot)
 
-#Gyro Function Begins 
+
 def getGyro ():
 
 	# Power management registers
@@ -59,27 +56,23 @@ def getGyro ():
 	bus.write_byte_data(address, power_mgmt_1, 0)
 
 
-  	gyro_xout = read_word_2c(0x43)
-  	gyro_yout = read_word_2c(0x45)
-  	gyro_zout = read_word_2c(0x47)
+    gyro_xout = read_word_2c(0x43)
+    gyro_yout = read_word_2c(0x45)
+    gyro_zout = read_word_2c(0x47)
+    
+    accel_xout = read_word_2c(0x3b)
+    accel_yout = read_word_2c(0x3d)
+    accel_zout = read_word_2c(0x3f)
 
-  	accel_xout = read_word_2c(0x3b)
-  	accel_yout = read_word_2c(0x3d)
-  	accel_zout = read_word_2c(0x3f)
-
-  	accel_xout_scaled = accel_xout / 16384.0
- 	accel_yout_scaled = accel_yout / 16384.0
-  	accel_zout_scaled = accel_zout / 16384.0
-   
-  	#This is what actually tells us the angle of the bot 
-  	xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
-  	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+    accel_xout_scaled = accel_xout / 16384.0
+    accel_yout_scaled = accel_yout / 16384.0
+    accel_zout_scaled = accel_zout / 16384.0
 	
-  	yrot = yrot+makeMeLevelY
-	xrot = xrto+makeMeLevelX
-   
+	
+	xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)  
+	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
+	
+	xrot=xrot+makeMeLevelx
+	yrot=yrot+makeMeLevelY
 	return 
- 
-	
-	
 	
