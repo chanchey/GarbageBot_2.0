@@ -67,8 +67,10 @@ def getGyro ():
   	xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
   	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
   
-  	makeMeLevel = 0.0 #This will be used to calibrate garbage bot's center of Grav 
-  	yrot=yrot+makeMeLevel
+  	makeMeLevelY = 0.0 #This will be used to calibrate garbage bot's center of Grav 
+	makeMeLevelX = 0.0
+  	yrot = yrot+makeMeLevelY
+	xrot = xrto+makeMeLevelX
    
 	return 
   #End of Function
