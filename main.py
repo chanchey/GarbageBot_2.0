@@ -4,9 +4,8 @@ import smbus
 import math
 import time
 
-#Global Variables this will modify 
-xrot
-yrot
+#Global Variables this will modify
+yrot=0.0
 
 #Scaling Factor to level bot 
 makeMeLevelY=0.0 
@@ -73,6 +72,6 @@ def getGyro ():
 	yrot=yrot+makeMeLevelY
 	
 	print(xrot, yrot)
-	return xrot, yrot
-getGyro()
+	return yrot
+yrot=getGyro()
 print(xrot, yrot)
