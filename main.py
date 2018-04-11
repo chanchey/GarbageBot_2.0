@@ -10,7 +10,7 @@ import time
 xrot=0.0
 yrot=0.0 
 
-
+#Gyro Function Begins 
 def getGyro ():
 
 	# Power management registers
@@ -51,24 +51,24 @@ def getGyro ():
 	bus.write_byte_data(address, power_mgmt_1, 0)
 
 
-  gyro_xout = read_word_2c(0x43)
-  gyro_yout = read_word_2c(0x45)
-  gyro_zout = read_word_2c(0x47)
+  	gyro_xout = read_word_2c(0x43)
+  	gyro_yout = read_word_2c(0x45)
+  	gyro_zout = read_word_2c(0x47)
 
-  accel_xout = read_word_2c(0x3b)
-  accel_yout = read_word_2c(0x3d)
-  accel_zout = read_word_2c(0x3f)
+  	accel_xout = read_word_2c(0x3b)
+  	accel_yout = read_word_2c(0x3d)
+  	accel_zout = read_word_2c(0x3f)
 
-  accel_xout_scaled = accel_xout / 16384.0
-  accel_yout_scaled = accel_yout / 16384.0
-  accel_zout_scaled = accel_zout / 16384.0
+  	accel_xout_scaled = accel_xout / 16384.0
+ 	accel_yout_scaled = accel_yout / 16384.0
+  	accel_zout_scaled = accel_zout / 16384.0
    
-  #This is what actually tells us the angle of the bot 
-  xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
-  yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
+  	#This is what actually tells us the angle of the bot 
+  	xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
+  	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
   
-  makeMeLevel = 0.0 #This will be used to calibrate garbage bot's center of Grav 
-  yrot=yrot+makeMeLevel
+  	makeMeLevel = 0.0 #This will be used to calibrate garbage bot's center of Grav 
+  	yrot=yrot+makeMeLevel
    
 	return 
   #End of Function
