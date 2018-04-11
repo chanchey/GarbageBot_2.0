@@ -1,14 +1,19 @@
 
 #!/usr/bin/python
 
+#These are the Libs I need imported for my functions to work
 import smbus
 import math
 import time
 
 
-#Collin's Global Variables (You Really only need Y) 
+#Collin's Global Variables The function will modify these to tell angle in degrees
 xrot=0.0
 yrot=0.0 
+
+#This will be used to calibrate garbage bot's center of Grav 
+makeMeLevelY = 0.0 
+makeMeLevelX = 0.0
 
 #Gyro Function Begins 
 def getGyro ():
@@ -65,10 +70,8 @@ def getGyro ():
    
   	#This is what actually tells us the angle of the bot 
   	xrot= get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
-  	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
-  
-  	makeMeLevelY = 0.0 #This will be used to calibrate garbage bot's center of Grav 
-	makeMeLevelX = 0.0
+  	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+	
   	yrot = yrot+makeMeLevelY
 	xrot = xrto+makeMeLevelX
    
