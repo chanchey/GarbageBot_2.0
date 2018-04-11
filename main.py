@@ -8,7 +8,7 @@ import time
 yrot=0.0
 
 #Scaling Factor to level bot 
-makeMeLevelY=-6 
+makeMeLevelY=0 
 
 def getGyro ():
 
