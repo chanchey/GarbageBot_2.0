@@ -6,7 +6,7 @@ import time
 
 #Global Variables this will modify
 yrot=0.0
-
+xrot=0.0
 #Scaling Factor to level bot 
 makeMeLevelY=0.0 
 makeMeLevelx=0.0
@@ -74,4 +74,4 @@ def getGyro ():
 	print(xrot, yrot)
 	return yrot
 yrot=getGyro()
-print(xrot, yrot)
+print(yrot)
