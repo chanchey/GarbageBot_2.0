@@ -5,6 +5,8 @@ import math
 import time
 
 #Global Variables this will modify 
+xrot
+yrot
 
 #Scaling Factor to level bot 
 makeMeLevelY=0.0 
