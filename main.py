@@ -179,7 +179,7 @@ for i in range(600):
         char = ""        
         timestamp=i*.025
 	yrot=getGyro()
-	f.write("Time:%.5r Angle:%.5r\r\n " %(timestamp, yrot)) 
+	f.write("Time:%.5r   Angle:%.5r   Key:%s\r\n " %(timestamp, yrot, char)) 
 	   
                  
 GPIO.cleanup()
