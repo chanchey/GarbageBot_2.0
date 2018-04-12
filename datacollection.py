@@ -46,60 +46,6 @@ motor2.start(0)
 motor1.ChangeDutyCycle(0)
 motor2.ChangeDutyCycle(0)
 
-#Encoder Var
-from RPi import GPIO
-from time import sleep
-
-#Encoder globals
-
-Ae1 = 18	#GPIO18 encoder
-Be1 = 15	#GPIO15 encoder
-Ae2 = 	8	#GPIO08 encoder
-Be2 = 25	#GPIO25 encoder
-
-
-GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
-global encoderCounter1
-global encoderCounter2
-
-
-#Ecoder Function 
-def getEncoder1():
-	while(True):	
-		clkLastState1 = GPIO.input(Ae1)
-
-		clkState1 = GPIO.input(Ae1)
-		dtState1 = GPIO.input(Be1)
-                
-		if clkState1 != clkLastState1:
-			if dtState1 != clkState1:
-				encoderCounter1 = encoderCounter1+1
-			else:
-				encoderCounter1 =encoderCounter1-1
-		clkLastState1 = clkState1
-	
-		return encoderCounter1
-
-def getEncoder2():
-	while(True):	
-		clkLastState2 = GPIO.input(Ae2)
-
-		clkState2 = GPIO.input(Ae2)
-		dtState2 = GPIO.input(Be2)
-                
-		if clkState2 != clkLastState2:
-			if dtState2 != clkState2:
-				encoderCounter2 += 1
-			else:
-				encoderCounter2 -= 1                
-		clkLastState2 = clkState2
-		
-		return encoderCounter2
-
 #Controller Function 
 def getch():
     fd = sys.stdin.fileno()
@@ -232,9 +178,7 @@ for i in range(600):
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.025
 	yrot=getGyro()
-	encoderCounter1 = getEncoder1()
-	encoderCounter2 = getEncoder2()
-	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
+	f.write("Time:%.5r	Angle:%.5r	Key:%s\r\n " %(timestamp, yrot, char) 
 	char = ""
                  
 GPIO.cleanup()
