@@ -44,4 +44,4 @@ def getEncoder():
 	sleep(0.01)
 	return
 getEncoder()
-print("Motor1:%d Motor2:%d", %(encoderCounter1, encoderCounter2))
+print("Motor1:%d Motor2:%d" %(encoderCounter1, encoderCounter2))
