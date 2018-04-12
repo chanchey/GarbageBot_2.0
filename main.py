@@ -82,7 +82,6 @@ def getEncoder1():
 			encoderCounter1 += 1
 		else:
 			encoderCounter1 -= 1
-		return encoderCounter1
 #	if clkState2 != clkLastState2:
 #		if dtState2 != clkState2:
 #			encoderCounter2 += 1
@@ -91,7 +90,7 @@ def getEncoder1():
 #		return encoderCounter2                
 	clkLastState1 = clkState1
 #	clkLastState2 = clkState2
-	return
+	return encoderCounter1
 
 def getEncoder2():
 
@@ -113,11 +112,10 @@ def getEncoder2():
 		if dtState2 != clkState2:
 			encoderCounter2 += 1
 		else:
-			encoderCounter2 -= 1
-		return encoderCounter2                
+			encoderCounter2 -= 1                
 #	clkLastState1 = clkState1
 	clkLastState2 = clkState2
-	return
+	return encoderCounter2
 
 #Controller Function 
 def getch():
