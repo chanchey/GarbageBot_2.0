@@ -76,7 +76,7 @@ def getGyro ():
 #Start time stamping and write to file
 
 
-for i in range(100):
+for i in range(600):
 	timestamp=i*.025
 	yrot=getGyro()
 	f.write("Time:%.5r Angle:%.5r\r\n " %(timestamp, yrot)) 
