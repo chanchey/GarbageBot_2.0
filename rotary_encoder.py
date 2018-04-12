@@ -20,6 +20,7 @@ clkLastState1 = GPIO.input(A1)
 clkLastState2 = GPIO.input(A2)
 
 try:
+          
           while True:
                 clkState1 = GPIO.input(A1)
                 dtState1 = GPIO.input(B1)
@@ -40,4 +41,5 @@ try:
                 clkLastState1 = clkState1
                 clkLastState2 = clkState2
                 sleep(0.01)
-finish
+finally:
+          GPIO.cleanup()
