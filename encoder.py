@@ -32,14 +32,15 @@ while True:
 			encoderCounter1 += 1
 		else:
 			encoderCounter1 -= 1
-	
+		print encoderCounter1
 	if clkState2 != clkLastState2:
 		if dtState2 != clkState2:
 			encoderCounter2 += 1
 		else:
 			encoderCounter2 -= 1
-		                
+		print encoderCounter2
+		
 	clkLastState1 = clkState1
 	clkLastState2 = clkState2
 	sleep(0.01)
-	print("Motor1:%d Motor2:%d" %(encoderCounter1, encoderCounter2))
+	
