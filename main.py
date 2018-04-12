@@ -46,6 +46,26 @@ motor2.start(0)
 motor1.ChangeDutyCycle(0)
 motor2.ChangeDutyCycle(0)
 
+#Encoder Var
+from RPi import GPIO
+from time import sleep
+
+#Encoder globals
+
+Ae1 = 12	#GPIO18 encoder
+Be1 = 10	#GPIO15 encoder
+Ae2 = 24	#GPIO08 encoder
+Be2 = 22	#GPIO25 encoder
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+encoderCounter1 = 0
+encoderCounter2 = 0
+
 #Ecoder Function 
 def getEncoder():
 
