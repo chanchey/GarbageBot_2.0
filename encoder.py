@@ -27,18 +27,18 @@ def getEncoder():
 	clkState2 = GPIO.input(Ae2)
 	dtState2 = GPIO.input(Be2)
                 
-		if clkState1 != clkLastState1:
-			if dtState1 != clkState1:
-				encoderCounter1 += 1
-			else:
-				encoderCounter1 -= 1
-			return encoderCounter1
-		if clkState2 != clkLastState2:
-			if dtState2 != clkState2:
-				encoderCounter2 += 1
-			else:
-				encoderCounter2 -= 1
-			return encoderCounter2                
+	if clkState1 != clkLastState1:
+		if dtState1 != clkState1:
+			encoderCounter1 += 1
+		else:
+			encoderCounter1 -= 1
+		return encoderCounter1
+	if clkState2 != clkLastState2:
+		if dtState2 != clkState2:
+			encoderCounter2 += 1
+		else:
+			encoderCounter2 -= 1
+		return encoderCounter2                
 	clkLastState1 = clkState1
 	clkLastState2 = clkState2
 	sleep(0.01)
