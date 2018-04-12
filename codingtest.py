@@ -77,7 +77,7 @@ def getGyro ():
 
 
 for i in range(50):
-	timestamp=timestamp+i*.25
+	timestamp=i*.25
 	yrot=getGyro()
 	f.write("Time:%r Angle:%r\r\n " %(timestamp, yrot)) 
 	 
