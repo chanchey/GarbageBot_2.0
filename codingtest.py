@@ -79,7 +79,7 @@ while i<100 :
 	i=i+1
 	yrot=getGyro()
 	timestamp=timestamp+i*.25
-	f.write(""Timestamp",timestamp,"Angle",angle" % (i))
+	f.write("This is a line",angle" %(i))
 	return 
 
 f.close()
