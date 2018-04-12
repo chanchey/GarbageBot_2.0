@@ -74,12 +74,12 @@ def getGyro ():
 #End of Function
 
 #Start time stamping and write to file
-while i<100 : 
 
-	i=i+1
+
+for i in range(50):
 	yrot=getGyro()
 	timestamp=timestamp+i*.25
-	f.write("This is a line",angle" %(i))
+	f.write("This is a line " % (i+1))
 	return 
 
 f.close()
