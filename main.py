@@ -54,7 +54,7 @@ from time import sleep
 
 Ae1 = 18	#GPIO18 encoder
 Be1 = 15	#GPIO15 encoder
-Ae2 = 08	#GPIO08 encoder
+Ae2 = 	8	#GPIO08 encoder
 Be2 = 25	#GPIO25 encoder
 
 
