@@ -1,6 +1,6 @@
 import time
 f = open("testing.txt", "w+")
-for i = 1:500
+for i in range(100)
 	f.write("this is line %d", i)
 f.close()
 	
