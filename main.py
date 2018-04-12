@@ -227,7 +227,7 @@ for i in range(600):
         timestamp=i*.025
 	yrot=getGyro()
 	getEncoder()
-	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:$.4r	Encoder2:$.4r\r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
+	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:$.4r	Encoder2:$.4r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
 	char = ""   
                  
 GPIO.cleanup()
