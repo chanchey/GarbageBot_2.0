@@ -22,10 +22,10 @@ def getEncoder():
 	clkLastState1 = GPIO.input(Ae1)
 	clkLastState2 = GPIO.input(Ae2)
 
-		clkState1 = GPIO.input(Ae1)
-		dtState1 = GPIO.input(Be1)
-		clkState2 = GPIO.input(Ae2)
-		dtState2 = GPIO.input(Be2)
+	clkState1 = GPIO.input(Ae1)
+	dtState1 = GPIO.input(Be1)
+	clkState2 = GPIO.input(Ae2)
+	dtState2 = GPIO.input(Be2)
                 
 		if clkState1 != clkLastState1:
 			if dtState1 != clkState1:
@@ -39,8 +39,8 @@ def getEncoder():
 			else:
 				encoderCounter2 -= 1
 			return encoderCounter2                
-		clkLastState1 = clkState1
-		clkLastState2 = clkState2
-		sleep(0.01)
+	clkLastState1 = clkState1
+	clkLastState2 = clkState2
+	sleep(0.01)
 getEncoder()
 print("Motor1:%d Motor2:%d", %(encoderCounter1, encoderCounter2))
