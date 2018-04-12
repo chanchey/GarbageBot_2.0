@@ -63,14 +63,14 @@ GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-Global encoderCounter1
-Global encoderCounter2
+encoderCounter1=0
+encoderCounter2=0
 
 clkLastState1 = GPIO.input(A1)
 clkLastState2 = GPIO.input(A2)
 
 #Ecoder Function 
-def getEncoder1():
+def getEncoder1(count):
 	clkLastState1 = GPIO.input(Ae1)
 
 	clkState1 = GPIO.input(Ae1)
@@ -78,14 +78,14 @@ def getEncoder1():
                 
 	if clkState1 != clkLastState1:
 		if dtState1 != clkState1:
-			encoderCounter1 += 1
+			count += 1
 		else:
-			encoderCounter1 -= 1	
+			count -= 1	
 	clkLastState1 = clkState1
 
-	return None
+	return count
 
-def getEncoder2():
+def getEncoder2(count):
 	clkLastState2 = GPIO.input(Ae2)
 
 	clkState2 = GPIO.input(Ae2)
@@ -93,12 +93,12 @@ def getEncoder2():
                 
 	if clkState2 != clkLastState2:
 		if dtState2 != clkState2:
-			encoderCounter2 += 1
+			count += 1
 		else:
-			encoderCounter2 -= 1                
+			count -= 1                
 	clkLastState2 = clkState2
 		
-	return None
+	return count
 
 #Controller Function 
 def getch():
@@ -232,8 +232,8 @@ for i in range(600):
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.025
 	yrot=getGyro()
-	getEncoder1()
-	getEncoder2()
+	encoderCounter1 = getEncoder1(encoderCounter1)
+	encoderCounter2 = getEncoder2(encoderCounter2)
 	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
 	char = ""
                  
