@@ -80,11 +80,10 @@ def getEncoder1():
 		if dtState1 != clkState1:
 			encoderCounter1 += 1
 		else:
-			encoderCounter1 -= 1
-	out1 = encoderCounter1		
+			encoderCounter1 -= 1	
 	clkLastState1 = clkState1
 
-	return out1
+	return None
 
 def getEncoder2():
 	clkLastState2 = GPIO.input(Ae2)
@@ -97,10 +96,9 @@ def getEncoder2():
 			encoderCounter2 += 1
 		else:
 			encoderCounter2 -= 1                
-	out2 = encoderCounter2
 	clkLastState2 = clkState2
 		
-	return out2
+	return None
 
 #Controller Function 
 def getch():
