@@ -78,7 +78,7 @@ def getGyro ():
 
 for i in range(50):
 	timestamp=timestamp+i*.25
-	f.write("Time:%d Angle:%d\r\n " %timestamp % getGyro())
+	f.write("Time:%d Angle:%d\r\n " %timestamp, % getGyro())
 	 
 
 f.close()
