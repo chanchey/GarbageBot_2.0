@@ -63,12 +63,12 @@ GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
+encoderCounter1 = 0
+encoderCounter2 = 0
 
 #Ecoder Function 
 def getEncoder():
 
-	encoderCounter1 = 0
-	encoderCounter2 = 0
 	clkLastState1 = GPIO.input(Ae1)
 	clkLastState2 = GPIO.input(Ae2)
 
@@ -91,7 +91,6 @@ def getEncoder():
 		return encoderCounter2                
 	clkLastState1 = clkState1
 	clkLastState2 = clkState2
-	sleep(0.01)
 	return
 
 #Controller Function 
