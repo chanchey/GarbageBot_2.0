@@ -43,5 +43,6 @@ def getEncoder():
 	clkLastState2 = clkState2
 	sleep(0.01)
 	return
+While True:
 getEncoder()
 print("Motor1:%d Motor2:%d" %(encoderCounter1, encoderCounter2))
