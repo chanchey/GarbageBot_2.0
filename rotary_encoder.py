@@ -42,5 +42,5 @@ try:
                 clkLastState1 = clkState1
                 clkLastState2 = clkState2
                 sleep(0.01)
-finish:
+finish
         GPIO.cleanup()
