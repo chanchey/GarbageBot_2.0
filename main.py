@@ -69,35 +69,36 @@ global encoderCounter2
 
 #Ecoder Function 
 def getEncoder1():
-while(True):	
-	clkLastState1 = GPIO.input(Ae1)
+	while(True):	
+		clkLastState1 = GPIO.input(Ae1)
 
-	clkState1 = GPIO.input(Ae1)
-	dtState1 = GPIO.input(Be1)
+		clkState1 = GPIO.input(Ae1)
+		dtState1 = GPIO.input(Be1)
                 
-	if clkState1 != clkLastState1:
-		if dtState1 != clkState1:
-			encoderCounter1 = encoderCounter1+1
-		else:
-			encoderCounter1 =encoderCounter1-1
-	clkLastState1 = clkState1
+		if clkState1 != clkLastState1:
+			if dtState1 != clkState1:
+				encoderCounter1 = encoderCounter1+1
+			else:
+				encoderCounter1 =encoderCounter1-1
+		clkLastState1 = clkState1
 	
-	return encoderCounter1
+		return encoderCounter1
 
 def getEncoder2():
-while(True):	
-	clkLastState2 = GPIO.input(Ae2)
+	while(True):	
+		clkLastState2 = GPIO.input(Ae2)
 
-	clkState2 = GPIO.input(Ae2)
-	dtState2 = GPIO.input(Be2)
+		clkState2 = GPIO.input(Ae2)
+		dtState2 = GPIO.input(Be2)
                 
-	if clkState2 != clkLastState2:
-		if dtState2 != clkState2:
-			encoderCounter2 += 1
-		else:
-			encoderCounter2 -= 1                
-	clkLastState2 = clkState2
-	return encoderCounter2
+		if clkState2 != clkLastState2:
+			if dtState2 != clkState2:
+				encoderCounter2 += 1
+			else:
+				encoderCounter2 -= 1                
+		clkLastState2 = clkState2
+		
+		return encoderCounter2
 
 #Controller Function 
 def getch():
