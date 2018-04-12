@@ -79,7 +79,7 @@ def getGyro ():
 for i in range(50):
 	yrot=getGyro()
 	timestamp=timestamp+i*.25
-	f.write("This is a line %d\r\n " % (i+1))
+	f.write("This is a line %d\r\n " % yrot)
 	 
 
 f.close()
