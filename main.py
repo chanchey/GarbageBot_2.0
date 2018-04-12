@@ -63,8 +63,8 @@ GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-encoderCounter1=0
-encoderCounter2=0
+global encoderCounter1=0
+global encoderCounter2=0
 
 
 #Ecoder Function 
@@ -231,8 +231,8 @@ for i in range(600):
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.025
 	yrot=getGyro()
-	getEncoder1()
-	getEncoder2()
+	encoderCounter1 = getEncoder1()
+	encoderCounter2 = getEncoder2()
 	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
 	char = ""
                  
