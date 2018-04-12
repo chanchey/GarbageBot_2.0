@@ -7,6 +7,14 @@ import time
 #Global Variables this will modify
 yrot=0.0
 
+#TimeStamp Constant
+timestamp=0.0
+i=0
+
+#Open File 
+
+f=open("testing.txt","w+")
+
 #Scaling Factor to level bot 
 makeMeLevelY=5.5
 
