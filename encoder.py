@@ -3,12 +3,12 @@ from time import sleep
 
 #Encoder globals
 
-Ae1 = 12	#GPIO18 encoder
-Be1 = 10	#GPIO15 encoder
-Ae2 = 24	#GPIO08 encoder
-Be2 = 22	#GPIO25 encoder
+Ae1 = 18	#GPIO18 encoder
+Be1 = 15	#GPIO15 encoder
+Ae2 = 08	#GPIO08 encoder
+Be2 = 25	#GPIO25 encoder
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
