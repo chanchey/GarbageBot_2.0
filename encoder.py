@@ -17,7 +17,7 @@ GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 encoderCounter1 = 0
 encoderCounter2 = 0
 
-def getEncoder():
+while true:
 
 	clkLastState1 = GPIO.input(Ae1)
 	clkLastState2 = GPIO.input(Ae2)
@@ -42,7 +42,4 @@ def getEncoder():
 	clkLastState1 = clkState1
 	clkLastState2 = clkState2
 	sleep(0.01)
-	return
-while True:
-	getEncoder()
 	print("Motor1:%d Motor2:%d" %(encoderCounter1, encoderCounter2))
