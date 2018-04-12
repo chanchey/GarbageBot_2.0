@@ -36,7 +36,7 @@ try:
                 if clkState2 != clkLastState2:
                         if dtState2 != clkState2:
                                 counter2 += 1
-                          else:
+                        else:
                                 counter2 -= 1
                         print counter2                
                 clkLastState1 = clkState1
