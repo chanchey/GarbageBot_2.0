@@ -68,7 +68,7 @@ encoderCounter2 = 0
 
 #Ecoder Function 
 def getEncoder1():
-
+	encoderCounter1 = 0
 	clkLastState1 = GPIO.input(Ae1)
 
 	clkState1 = GPIO.input(Ae1)
@@ -84,7 +84,7 @@ def getEncoder1():
 	return encoderCounter1
 
 def getEncoder2():
-
+	encoderCounter2 = 0
 	clkLastState2 = GPIO.input(Ae2)
 
 	clkState2 = GPIO.input(Ae2)
