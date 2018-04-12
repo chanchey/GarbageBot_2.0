@@ -63,9 +63,11 @@ GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-global encoderCounter1
-global encoderCounter2
+encoderCounter1=0
+encoderCounter2=0
 
+clkLastState1 = GPIO.input(A1)
+clkLastState2 = GPIO.input(A2)
 
 #Ecoder Function 
 def getEncoder1():
