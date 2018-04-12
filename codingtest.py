@@ -80,6 +80,6 @@ for i in range(50):
 	yrot=getGyro()
 	timestamp=timestamp+i*.25
 	f.write("This is a line " % (i+1))
-	return 
+	 
 
 f.close()
