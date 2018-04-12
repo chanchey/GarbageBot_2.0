@@ -74,7 +74,7 @@ def getGyro ():
 #End of Function
 
 #Start time stamping and write to file
-while i<100 
+while i<100 : 
 
 	i=i+1
 	yrot=getGyro()
