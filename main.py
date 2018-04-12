@@ -69,7 +69,7 @@ global encoderCounter2
 
 #Ecoder Function 
 def getEncoder1():
-	
+while(True):	
 	clkLastState1 = GPIO.input(Ae1)
 
 	clkState1 = GPIO.input(Ae1)
@@ -85,7 +85,7 @@ def getEncoder1():
 	return encoderCounter1
 
 def getEncoder2():
-	
+while(True):	
 	clkLastState2 = GPIO.input(Ae2)
 
 	clkState2 = GPIO.input(Ae2)
