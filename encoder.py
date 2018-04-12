@@ -5,7 +5,7 @@ from time import sleep
 
 Ae1 = 18	#GPIO18 encoder
 Be1 = 15	#GPIO15 encoder
-Ae2 = 8	#GPIO08 encoder
+Ae2 = 8		#GPIO08 encoder
 Be2 = 25	#GPIO25 encoder
 
 GPIO.setmode(GPIO.BCM)
@@ -44,3 +44,4 @@ while True:
 	clkLastState2 = clkState2
 	sleep(0.01)
 	
+GPIO.cleanup()
