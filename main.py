@@ -78,12 +78,13 @@ def getEncoder1():
                 
 	if clkState1 != clkLastState1:
 		if dtState1 != clkState1:
-			encoderCounter1 = encoderCounter1+1
+			encoderCounter1 += 1
 		else:
-			encoderCounter1 =encoderCounter1-1
+			encoderCounter1 -= 1
+	out1 = encoderCounter1		
 	clkLastState1 = clkState1
 
-	return encoderCounter1
+	return out1
 
 def getEncoder2():
 	clkLastState2 = GPIO.input(Ae2)
@@ -96,9 +97,10 @@ def getEncoder2():
 			encoderCounter2 += 1
 		else:
 			encoderCounter2 -= 1                
+	out2 = encoderCounter2
 	clkLastState2 = clkState2
 		
-	return encoderCounter2
+	return out2
 
 #Controller Function 
 def getch():
@@ -232,8 +234,8 @@ for i in range(600):
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.025
 	yrot=getGyro()
-	encoderCounter1 = getEncoder1()
-	encoderCounter2 = getEncoder2()
+	getEncoder1()
+	getEncoder2()
 	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
 	char = ""
                  
