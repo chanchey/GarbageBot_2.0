@@ -76,10 +76,11 @@ def getEncoder1():
                 
 	if clkState1 != clkLastState1:
 		if dtState1 != clkState1:
-			encoderCounter1 += 1
+			encoderCounter1 = encoderCounter1+1
 		else:
-			encoderCounter1 -= 1
+			encoderCounter1 =encoderCounter1-1
 	clkLastState1 = clkState1
+	
 	return encoderCounter1
 
 def getEncoder2():
