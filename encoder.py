@@ -8,7 +8,6 @@ Be1 = 15	#GPIO15 encoder
 Ae2 = 08	#GPIO08 encoder
 Be2 = 25	#GPIO25 encoder
 
-GPIO.setmode(GPIO.BCM)
 GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
