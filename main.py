@@ -175,12 +175,11 @@ for i in range(600):
                 
         time.sleep(.1)        
         motor1.ChangeDutyCycle(0)
-        motor2.ChangeDutyCycle(0)        
-        char = ""        
+        motor2.ChangeDutyCycle(0)                
         timestamp=i*.025
 	yrot=getGyro()
 	f.write("Time:%.5r   Angle:%.5r   Key:%s\r\n " %(timestamp, yrot, char)) 
-	   
+	char = ""   
                  
 GPIO.cleanup()
 
