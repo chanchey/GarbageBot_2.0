@@ -63,8 +63,8 @@ GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-global encoderCounter1=0
-global encoderCounter2=0
+global encoderCounter1
+global encoderCounter2
 
 
 #Ecoder Function 
