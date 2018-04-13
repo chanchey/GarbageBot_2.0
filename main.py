@@ -23,12 +23,12 @@ makeMeLevelY=5.5
 import curses
 import RPi.GPIO as GPIO
 import time, sys, tty, termios
-A1 = 6
-A2 = 13
-B1 = 20
-B2 = 21
-D1 = 12
-D2 = 26
+A1 = 6	#M3
+A2 = 13	#M4
+B1 = 20	#M1
+B2 = 21	#M2
+D1 = 12	#PWMB
+D2 = 26	#PWMA
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -209,9 +209,7 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-                if char != "w":
-			GPIO.output(B1,False)
-			GPIO.output(B2,True)
+               
                 
         elif char == "s":
                 reverse()
