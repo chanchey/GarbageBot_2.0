@@ -93,10 +93,10 @@ try:
                 dtState1 = GPIO.input(B1)
                 clkState2 = GPIO.input(A2)
                 dtState2 = GPIO.input(B2)  
-                if 100 < complexcounter <= 600 :
+                if 550 < complexcounter <= 600 :
                         gyrosum += get_y_rotation()
                 if complexcounter == 601 :
-                        gyroaverage = gyrosum/500
+                        gyroaverage = gyrosum/50
                         gyrosum = 0
                         print("x: " , get_x_rotation(),  "y: " , gyroaverage)
                 if complexcounter == 5001 :
