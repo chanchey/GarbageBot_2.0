@@ -207,24 +207,24 @@ for i in range(600):
                 break
         elif char == "w":
                 forward()
-                motor1.ChangeDutyCycle(77.8)
+                motor1.ChangeDutyCycle(25)
                 motor2.ChangeDutyCycle(100)
                 
                 
         elif char == "s":
                 reverse()
-                motor1.ChangeDutyCycle(77.8)
+                motor1.ChangeDutyCycle(25)
                 motor2.ChangeDutyCycle(100)
                          
                 
         elif char == "d":
                 right()
-                motor1.ChangeDutyCycle(77.8)
+                motor1.ChangeDutyCycle(25)
                 motor2.ChangeDutyCycle(100)
                 
         elif char == "a":
                 left()
-                motor1.ChangeDutyCycle(77.8)
+                motor1.ChangeDutyCycle(25)
                 motor2.ChangeDutyCycle(100)
                 
         time.sleep(.1)        
