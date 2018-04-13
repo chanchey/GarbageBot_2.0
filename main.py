@@ -209,9 +209,9 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-                if char == "":
-			GPIO.output(B1, False)
-			GPIO.output(B2, True)
+                if char == " ":
+			GPIO.output(B1, True)
+			GPIO.output(B2, False)
                 
         elif char == "s":
                 reverse()
