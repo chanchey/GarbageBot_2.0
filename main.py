@@ -50,8 +50,11 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1 = GPIO.PWM(D1,100)
-motor2 = GPIO.PWM(D2,100)
+motor1PWM = 100
+motor2PWM = 100
+
+motor1 = GPIO.PWM(D1,motor1PWM)
+motor2 = GPIO.PWM(D2,motor1PWM)
 motor1.start(0)
 motor2.start(0)
 
@@ -85,7 +88,6 @@ def getEncoder1(count):
 		else:
 			count -= 1	
 	clkLastState1 = clkState1
-
 	return count
 
 def getEncoder2(count):
@@ -100,7 +102,6 @@ def getEncoder2(count):
 		else:
 			count -= 1                
 	clkLastState2 = clkState2
-		
 	return count
 
 #Controller Function 
