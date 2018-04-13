@@ -39,10 +39,10 @@ GPIO.setup(B1,GPIO.OUT)
 GPIO.setup(B2,GPIO.OUT)
 GPIO.setup(D1,GPIO.OUT)
 GPIO.setup(D2,GPIO.OUT)
-motor1 = GPIO.PWM(D1,100)
-motor2 = GPIO.PWM(D2,100)
+motor1 = GPIO.PWM(D1,500)
+motor2 = GPIO.PWM(D2,500)
 motor1.start(0)
-motor2.start(10)
+motor2.start(0)
 #motor1.ChangeDutyCycle(0)
 #motor2.ChangeDutyCycle(0)
 
@@ -209,6 +209,7 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
+		GPIO.output(
                
         elif char == "s":
                 reverse()
