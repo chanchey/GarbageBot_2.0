@@ -95,12 +95,12 @@ try:
                 dtState1 = GPIO.input(B1)
                 clkState2 = GPIO.input(A2)
                 dtState2 = GPIO.input(B2)  
-                if 550 < complexcounter <= 600 :
+                if 4950 < complexcounter <= 5000 :
                         gyrosum += get_y_rotation()
-                if complexcounter == 601 :
-                        gyroaverage = gyrosum/50
-                        gyrosum = 0
-                        f.write("x: %r y: %r \r\n" %(get_x_rotation(), gyroaverage))
+                #if complexcounter == 601 :
+                        #gyroaverage = gyrosum/50
+                        #gyrosum = 0
+                        #f.write("x: %r y: %r \r\n" %(get_x_rotation(), gyroaverage))
                 if complexcounter == 5001 :
                         complexcounter -= 5001
                 if clkState1 != clkLastState1:
