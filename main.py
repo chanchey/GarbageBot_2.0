@@ -4,6 +4,15 @@ import smbus
 import math
 import time
 
+# import for controller
+import curses
+import RPi.GPIO as GPIO
+import time, sys, tty, termios
+
+# import for encoder
+from RPi import GPIO
+from time import sleep
+
 #Global Variables this will modify
 yrot=0.0
 
@@ -12,23 +21,19 @@ timestamp=0.0
 i=0
 
 #Open File 
-
 f=open("testing.txt","w+")
 
 #Scaling Factor to level bot 
 makeMeLevelY=5.5
 
 #Controller Variables 
-# import curses and GPIO
-import curses
-import RPi.GPIO as GPIO
-import time, sys, tty, termios
 A1 = 6	#M3
 A2 = 13	#M4
 B1 = 20	#M1
 B2 = 21	#M2
 D1 = 12	#PWMB
 D2 = 26	#PWMA
+
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -39,24 +44,22 @@ GPIO.setup(B1,GPIO.OUT)
 GPIO.setup(B2,GPIO.OUT)
 GPIO.setup(D1,GPIO.OUT)
 GPIO.setup(D2,GPIO.OUT)
-motor1 = GPIO.PWM(D1,500)
-motor2 = GPIO.PWM(D2,500)
+
+GPIO.output(A1, False)
+GPIO.output(A2, False)
+GPIO.output(B1, False)
+GPIO.output(B2, False)
+
+motor1 = GPIO.PWM(D1,100)
+motor2 = GPIO.PWM(D2,100)
 motor1.start(0)
 motor2.start(0)
-#motor1.ChangeDutyCycle(0)
-#motor2.ChangeDutyCycle(0)
-
-#Encoder Var
-from RPi import GPIO
-from time import sleep
 
 #Encoder globals
-
 Ae1 = 18	#GPIO18 encoder
 Be1 = 15	#GPIO15 encoder
 Ae2 = 	8	#GPIO08 encoder
 Be2 = 25	#GPIO25 encoder
-
 
 GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
@@ -128,18 +131,12 @@ def left():
         GPIO.output(B1, True)
         GPIO.output(B2, False)
         
-
 def right():
         GPIO.output(A1, False)
         GPIO.output(A2, True)
         GPIO.output(B1, False)
         GPIO.output(B2, True)
-        
-#GPIO.output(A1, False)
-#GPIO.output(A2, False)
-#GPIO.output(B1, False)
-#GPIO.output(B2, False)
-
+	
 #Gyro Function 
 def getGyro ():
 
