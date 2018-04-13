@@ -209,7 +209,7 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-		for (True):
+		while (True):
 			reverse()
 			break
                
