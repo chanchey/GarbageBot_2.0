@@ -94,7 +94,7 @@ try:
                 if complexcounter == 50 :
                         print("x: " , get_x_rotation(),  "y: " , get_y_rotation())
                 if complexcounter == 100 :
-                        complexcounter -= 1000
+                        complexcounter -= 5000
                 if clkState1 != clkLastState1:
                         if dtState1 != clkState1:
                                 counter1 += 1
