@@ -210,8 +210,8 @@ for i in range(600):
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
         	if char!= "w":
-			GPIO.output(B1, False)
-			GPIO.output(B2, True)
+			GPIO.output(A1, True)
+			GPIO.output(A2, False)
 	
 	elif char == "s":
                 reverse()
