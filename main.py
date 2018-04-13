@@ -234,6 +234,5 @@ for i in range(600):
 	encoderCounter1 = getEncoder1(encoderCounter1)
 	encoderCounter2 = getEncoder2(encoderCounter2)
 	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2))
-	if event.type == None:
-		print 'nothing pressed'
+	print event.type
 GPIO.cleanup()
