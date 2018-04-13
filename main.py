@@ -42,9 +42,9 @@ GPIO.setup(D2,GPIO.OUT)
 motor1 = GPIO.PWM(D1,100)
 motor2 = GPIO.PWM(D2,100)
 motor1.start(0)
-motor2.start(0)
-motor1.ChangeDutyCycle(0)
-motor2.ChangeDutyCycle(0)
+motor2.start(10)
+#motor1.ChangeDutyCycle(0)
+#motor2.ChangeDutyCycle(0)
 
 #Encoder Var
 from RPi import GPIO
