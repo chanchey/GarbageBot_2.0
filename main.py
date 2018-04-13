@@ -231,6 +231,7 @@ for i in range(600):
         if getch() == 116:
 		for i in (0,1):
 			reverse()
+			break
 	timestamp=i*.001
 	yrot=getGyro()
 	encoderCounter1 = getEncoder1(encoderCounter1)
