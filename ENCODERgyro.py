@@ -97,6 +97,7 @@ try:
                         gyrosum += get_y_rotation()
                 if complexcounter == 601 :
                         gyroaverage = gyrosum/500
+                        gyrosum = 0
                         print("x: " , get_x_rotation(),  "y: " , gyroaverage)
                 if complexcounter == 5001 :
                         complexcounter -= 5001
