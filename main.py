@@ -209,7 +209,7 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-                if char == " ":
+                if char = " ":
 			GPIO.output(A1, False)
 			GPIO.output(A2, True)
                 
