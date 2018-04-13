@@ -236,3 +236,4 @@ for i in range(600):
         if char != "w":
 		print 'nothing'
 GPIO.cleanup()
+PWM.stop()
