@@ -229,8 +229,8 @@ for i in range(600):
                 
         time.sleep(.25)        
         motor1.ChangeDutyCycle(0)
-	GPIO.output(A1,False)
-	GPIO.output(A2,True)
+	GPIO.output(B1,False)
+	GPIO.output(B2,True)
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.001
 	yrot=getGyro()
