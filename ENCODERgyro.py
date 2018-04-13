@@ -5,6 +5,8 @@ import smbus
 import math
 import time
 
+f=open("EGtesting.txt","w+")
+
 A1 = 12
 B1 = 10
 A2 = 24
@@ -98,7 +100,7 @@ try:
                 if complexcounter == 601 :
                         gyroaverage = gyrosum/50
                         gyrosum = 0
-                        print("x: " , get_x_rotation(),  "y: " , gyroaverage)
+                        f.write("x: %r" , get_x_rotation(),  "y: %r" , gyroaverage, "\r\n")
                 if complexcounter == 5001 :
                         complexcounter -= 5001
                 if clkState1 != clkLastState1:
@@ -106,13 +108,13 @@ try:
                                 counter1 += 1
                         else:
                                 counter1 -= 1
-                        print counter1
+                        f.write(counter1 "\n")
                 if clkState2 != clkLastState2:
                         if dtState2 != clkState2:
                                 counter2 += 1
                         else:
                                 counter2 -= 1
-                        print counter2                
+                        f.write(counter2 "\n")                
                 clkLastState1 = clkState1
                 clkLastState2 = clkState2
 finally:
