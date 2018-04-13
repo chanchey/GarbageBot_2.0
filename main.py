@@ -208,26 +208,26 @@ for i in range(600):
         elif char == "w":
                 forward()
                 motor1.ChangeDutyCycle(100)
-                motor2.ChangeDutyCycle(50)
+                motor2.ChangeDutyCycle(20)
                 
                 
         elif char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(100)
-                motor2.ChangeDutyCycle(50)
+                motor2.ChangeDutyCycle(20)
                          
                 
         elif char == "d":
                 right()
                 motor1.ChangeDutyCycle(100)
-                motor2.ChangeDutyCycle(50)
+                motor2.ChangeDutyCycle(20)
                 
         elif char == "a":
                 left()
                 motor1.ChangeDutyCycle(100)
-                motor2.ChangeDutyCycle(50)
+                motor2.ChangeDutyCycle(20)
                 
-        time.sleep(.1)        
+        #time.sleep(.1)        
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.001
