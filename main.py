@@ -209,9 +209,7 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-                if char = " ":
-			GPIO.output(A1, False)
-			GPIO.output(A2, True)
+                
                 
         elif char == "s":
                 reverse()
@@ -231,6 +229,8 @@ for i in range(600):
                 
         time.sleep(.25)        
         motor1.ChangeDutyCycle(0)
+	GPIO.output(A1,False)
+	GPIO.output(A2,True)
         motor2.ChangeDutyCycle(0)                
         timestamp=i*.001
 	yrot=getGyro()
