@@ -210,13 +210,11 @@ for i in range(600):
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
                
-                
         elif char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-                         
-                
+				                      
         elif char == "d":
                 right()
                 motor1.ChangeDutyCycle(65)
@@ -228,8 +226,8 @@ for i in range(600):
                 motor2.ChangeDutyCycle(100)
                 
         time.sleep(.1)        
-        motor1.ChangeDutyCycle(0)
-        motor2.ChangeDutyCycle(0)                
+        #motor1.ChangeDutyCycle(0)
+        #motor2.ChangeDutyCycle(0)                
         timestamp=i*.001
 	yrot=getGyro()
 	encoderCounter1 = getEncoder1(encoderCounter1)
