@@ -4,6 +4,7 @@ import smbus
 import math
 import time
 import keyboard
+import event
 
 #Global Variables this will modify
 yrot=0.0
