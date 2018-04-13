@@ -226,8 +226,8 @@ for i in range(600):
                 motor2.ChangeDutyCycle(100)
                 
         time.sleep(.1)        
-        motor1.ChangeDutyCycle(10)
-        motor2.ChangeDutyCycle(10)                
+        motor1.ChangeDutyCycle(0)
+        motor2.ChangeDutyCycle(-10)                
         timestamp=i*.001
 	yrot=getGyro()
 	encoderCounter1 = getEncoder1(encoderCounter1)
