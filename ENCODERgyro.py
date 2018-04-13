@@ -89,7 +89,7 @@ try:
                 dtState1 = GPIO.input(B1)
                 clkState2 = GPIO.input(A2)
                 dtState2 = GPIO.input(B2)  
-                #print("x rotation: " , get_x_rotation(),  "y rotation: " , get_y_rotation())
+                print("x rotation: " , get_x_rotation(),  "y rotation: " , get_y_rotation())
                 if clkState1 != clkLastState1:
                         if dtState1 != clkState1:
                                 counter1 += 1
