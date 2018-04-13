@@ -100,7 +100,7 @@ try:
                 if complexcounter == 601 :
                         gyroaverage = gyrosum/50
                         gyrosum = 0
-                        f.write("x: %r" , get_x_rotation(),  "y: %r" , gyroaverage, "\r\n")
+                        f.write("x: %r y: %r \r\n" %(get_x_rotation(), gyroaverage))
                 if complexcounter == 5001 :
                         complexcounter -= 5001
                 if clkState1 != clkLastState1:
@@ -108,13 +108,13 @@ try:
                                 counter1 += 1
                         else:
                                 counter1 -= 1
-                        f.write(counter1, "\n")
+                        f.write("%r\n" counter1)
                 if clkState2 != clkLastState2:
                         if dtState2 != clkState2:
                                 counter2 += 1
                         else:
                                 counter2 -= 1
-                        f.write(counter2, "\n")                
+                        f.write("%r\n" counter2)                
                 clkLastState1 = clkState1
                 clkLastState2 = clkState2
 finally:
