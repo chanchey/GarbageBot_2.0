@@ -78,6 +78,7 @@ bus.write_byte_data(address, power_mgmt_1, 0)
 
 counter1 = 0
 counter2 = 0
+complexcounter = 1
 
 clkLastState1 = GPIO.input(A1)
 clkLastState2 = GPIO.input(A2)
@@ -85,11 +86,13 @@ clkLastState2 = GPIO.input(A2)
 try:
           
           while True:
+                complexcounter = complexcounter*e^i*2*pi/100
                 clkState1 = GPIO.input(A1)
                 dtState1 = GPIO.input(B1)
                 clkState2 = GPIO.input(A2)
                 dtState2 = GPIO.input(B2)  
-                print("x rotation: " , get_x_rotation(),  "y rotation: " , get_y_rotation())
+                if complexcounter == 1 :
+                        print("x: " , get_x_rotation(),  "y: " , get_y_rotation())
                 if clkState1 != clkLastState1:
                         if dtState1 != clkState1:
                                 counter1 += 1
