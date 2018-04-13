@@ -209,8 +209,12 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-               
-        elif char == "s":
+        	if char == "":
+			reverse()
+			motor1.ChangeDutyCycle(0)
+			motor2.ChangeDutyCycle(25)
+	
+	elif char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
@@ -232,9 +236,6 @@ for i in range(600):
 	yrot=getGyro()
 	encoderCounter1 = getEncoder1(encoderCounter1)
 	encoderCounter2 = getEncoder2(encoderCounter2)
-	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2)) 
-	char = ""
-	if char == "":
-		print 'nothing'
+	f.write("Time:%.5r	Angle:%.5r	Key:%s	Encoder1:%r	Encoder2:%r \r\n " %(timestamp, yrot, char, encoderCounter1, encoderCounter2))
                  
 GPIO.cleanup()
