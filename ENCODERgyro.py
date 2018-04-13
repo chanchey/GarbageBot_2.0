@@ -79,6 +79,8 @@ bus.write_byte_data(address, power_mgmt_1, 0)
 counter1 = 0
 counter2 = 0
 complexcounter = 0
+gyrosum = 0
+gyroaverage = 0
 
 clkLastState1 = GPIO.input(A1)
 clkLastState2 = GPIO.input(A2)
@@ -91,10 +93,13 @@ try:
                 dtState1 = GPIO.input(B1)
                 clkState2 = GPIO.input(A2)
                 dtState2 = GPIO.input(B2)  
-                if complexcounter == 50 :
-                        print("x: " , get_x_rotation(),  "y: " , get_y_rotation())
-                if complexcounter == 100 :
-                        complexcounter -= 5000
+                if 100 < complexcounter <= 600 :
+                        gyrosum += get_y_rotation()
+                if complexcounter == 601 :
+                        gyroaverage = gyrosum/500
+                        print("x: " , get_x_rotation(),  "y: " , gyroaverage)
+                if complexcounter == 5001 :
+                        complexcounter -= 5001
                 if clkState1 != clkLastState1:
                         if dtState1 != clkState1:
                                 counter1 += 1
