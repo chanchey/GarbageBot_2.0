@@ -229,7 +229,7 @@ for i in range(600):
         motor1.ChangeDutyCycle(0)
         #motor2.ChangeDutyCycle(0)                
         if getch() == 116:
-		for i in (0,1)
+		for i in (0,1):
 			reverse()
 	timestamp=i*.001
 	yrot=getGyro()
