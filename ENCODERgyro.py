@@ -108,13 +108,13 @@ try:
                                 counter1 += 1
                         else:
                                 counter1 -= 1
-                        f.write("%r\n" counter1)
+                        f.write("%r\n" %counter1)
                 if clkState2 != clkLastState2:
                         if dtState2 != clkState2:
                                 counter2 += 1
                         else:
                                 counter2 -= 1
-                        f.write("%r\n" counter2)                
+                        f.write("%r\n" %counter2)                
                 clkLastState1 = clkState1
                 clkLastState2 = clkState2
 finally:
