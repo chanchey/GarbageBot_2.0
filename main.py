@@ -209,6 +209,9 @@ for i in range(600):
                 forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
+		for i in range (0,1):
+			reverse()
+			i+=1
                
         elif char == "s":
                 reverse()
