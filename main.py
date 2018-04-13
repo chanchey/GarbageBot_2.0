@@ -227,8 +227,7 @@ for i in range(600):
                 
         time.sleep(.1)        
         motor1.ChangeDutyCycle(0)
-        #motor2.ChangeDutyCycle(0)
-	print getch()
+        motor2.ChangeDutyCycle(0)
 	timestamp=i*.001
 	yrot=getGyro()
 	encoderCounter1 = getEncoder1(encoderCounter1)
@@ -237,4 +236,3 @@ for i in range(600):
 	char = ""
                  
 GPIO.cleanup()
-
