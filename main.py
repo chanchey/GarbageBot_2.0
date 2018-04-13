@@ -135,10 +135,10 @@ def right():
         GPIO.output(B1, False)
         GPIO.output(B2, True)
         
-GPIO.output(A1, False)
-GPIO.output(A2, False)
-GPIO.output(B1, False)
-GPIO.output(B2, False)
+#GPIO.output(A1, False)
+#GPIO.output(A2, False)
+#GPIO.output(B1, False)
+#GPIO.output(B2, False)
 
 #Gyro Function 
 def getGyro ():
@@ -210,8 +210,8 @@ for i in range(600):
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
                 if char == " ":
-			GPIO.output(B1, True)
-			GPIO.output(B2, False)
+			GPIO.output(A1, False)
+			GPIO.output(A2, True)
                 
         elif char == "s":
                 reverse()
