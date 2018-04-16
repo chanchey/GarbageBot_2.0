@@ -124,7 +124,7 @@ while True:
         	GPIO.output(B2, False)
 		motor1.ChangeDutyCycle(.65*DC)
 		motor2.ChangeDutyCycle(DC)
-	def getDC()
+	def getDC():
 		if 0<=yrot<=30:DC=20
 		return DC 
 	DC=getDC
