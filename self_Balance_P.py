@@ -9,7 +9,7 @@ import RPi.GPIO as GPIO
 yrot=0.0; 
 
 #Scaling Factor to level bot 
-makeMeLevelY=-6 
+makeMeLevelY=6 
 
 #Controller Variables 
 A1 = 6	#M3
