@@ -160,6 +160,7 @@ while True:
 		elif yrot<-80 & yrot>-90: 
 			DC=95
 		return DC 
+	DC= getDC()
 	if yrot<0: 
 		forward()
 	elif yrot>0: 
