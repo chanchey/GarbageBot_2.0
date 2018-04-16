@@ -141,6 +141,41 @@ while True:
 		elif 13<yrot<=14:DC=theP+14
 		elif 14<yrot<=15:DC=theP+15
 		elif 15<yrot<=16:DC=theP+16
+		elif 16<yrot<=17:DC=theP+17
+		elif 17<yrot<=18:DC=theP+18
+		elif 18<yrot<=19:DC=theP+19
+		elif 19<yrot<=20:DC=theP+20
+		elif 20<yrot<=21:DC=theP+21
+		elif 21<yrot<=22:DC=theP+22
+		elif 22<yrot<=23:DC=theP+23
+		elif 23<yrot<=24:DC=theP+24
+		elif 24<yrot<=25:DC=theP+25
+		elif 25<yrot<=26:DC=theP+26
+		elif 26<yrot<=27:DC=theP+27
+		elif 27<yrot<=28:DC=theP+28
+		elif 28<yrot<=29:DC=theP+29
+		elif 29<yrot<=30:DC=theP+30
+		elif 30<yrot<=31:DC=theP+31
+		elif 31<yrot<=32:DC=theP+32
+		elif 32<yrot<=33:DC=theP+33
+		elif 33<yrot<=34:DC=theP+34
+		elif 34<yrot<=35:DC=theP+35
+		elif 35<yrot<=36:DC=theP+36
+		elif 36<yrot<=37:DC=theP+37
+		elif 37<yrot<=38:DC=theP+38
+		elif 38<yrot<=39:DC=theP+39
+		elif 39<yrot<=40:DC=theP+40
+		elif 40<yrot<=41:DC=theP+41
+		elif 41<yrot<=42:DC=theP+42
+		elif 42<yrot<=43:DC=theP+43
+		elif 43<yrot<=44:DC=theP+44
+		elif 44<yrot<=45:DC=theP+45
+		elif 45<yrot<=46:DC=theP+46
+		elif 46<yrot<=47:DC=theP+47
+		elif 47<yrot<=48:DC=theP+48
+		elif 48<yrot<=49:DC=theP+49
+		elif 49<yrot<=50:DC=theP+50
+			
 		elif -0>yrot>=-1:DC=theP+1
 		elif -1>yrot>=-2:DC=theP+2
 		elif -2>yrot>=-3:DC=theP+3
@@ -157,6 +192,27 @@ while True:
 		elif -13>yrot>=-14:DC=theP+14
 		elif -14>yrot>=-15:DC=theP+15
 		elif -15>yrot>=-16:DC=theP+16
+		elif -16>yrot>=-17:DC=theP+17
+		elif -17>yrot>=-18:DC=theP+18
+		elif -18>yrot>=-19:DC=theP+19
+		elif -19>yrot>=-20:DC=theP+20
+		elif -20>yrot>=-21:DC=theP+21
+		elif -21>yrot>=-22:DC=theP+22
+		elif -22>yrot>=-23:DC=theP+23
+		elif -23>yrot>=-24:DC=theP+24
+		elif -24>yrot>=-25:DC=theP+25
+		elif -25>yrot>=-26:DC=theP+26
+		elif -26>yrot>=-27:DC=theP+27
+		elif -27>yrot>=-28:DC=theP+28
+		elif -28>yrot>=-29:DC=theP+29
+		elif -29>yrot>=-30:DC=theP+30
+		elif -30>yrot>=-31:DC=theP+31
+		elif -31>yrot>=-32:DC=theP+32
+		elif -32>yrot>=-33:DC=theP+33
+		elif -33>yrot>=-34:DC=theP+34
+		elif -34>yrot>=-35:DC=theP+35
+		elif -35>yrot>=-16:DC=theP+35
+		elif -36>yrot>=-16:DC=theP+36
 			
 		else: DC=0
 		return DC 
