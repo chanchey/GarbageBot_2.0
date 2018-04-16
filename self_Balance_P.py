@@ -108,7 +108,7 @@ while True:
 	motor2 = GPIO.PWM(D2,500)
 	motor1.start(0)
 	motor2.start(0)
-
+	DC=0.0
 	def forward():
         	GPIO.output(A1, True)
         	GPIO.output(A2, False)
@@ -125,14 +125,14 @@ while True:
 		motor1.ChangeDutyCycle(.65*DC)
 		motor2.ChangeDutyCycle(DC)
 	
-
+	
 	def getDC (): 
 		if 0<=yrot<=10:DC=25 
 		elif 10<yrot<=20: DC=35
 		elif 20<yrot<=30: DC=45	
 		elif 30<yrot<=40: DC=45  
 		return DC 
-	DC=0.0
+	
 	DC= getDC()
 	if yrot<0: 
 		forward()
