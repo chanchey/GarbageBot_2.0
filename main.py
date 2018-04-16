@@ -50,11 +50,8 @@ GPIO.setup(D2,GPIO.OUT)
 #GPIO.output(B1, False)
 #GPIO.output(B2, False)
 
-#motor1PWM = 5000
-#motor2PWM = 5000
-
-motor1 = GPIO.PWM(D1,motor1PWM)
-motor2 = GPIO.PWM(D2,motor1PWM)
+motor1 = GPIO.PWM(D1,5000)
+motor2 = GPIO.PWM(D2,5000)
 #motor1.start(0)
 #motor2.start(0)
 
@@ -115,15 +112,13 @@ def getch():
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     return ch
 
-def forward():
-	motor1PWM = 5000
-	motor2PWM = 5000
-	motor1.start(65)
-	motor2.start(100)
-        GPIO.output(A1, True)
-        GPIO.output(A2, False)
-        GPIO.output(B1, False)
-        GPIO.output(B2, True)
+#def forward():
+#	motor1.start(65)
+#	motor2.start(100)
+#        GPIO.output(A1, True)
+#        GPIO.output(A2, False)
+#        GPIO.output(B1, False)
+#        GPIO.output(B2, True)
 def reverse():
         GPIO.output(A1, False)
         GPIO.output(A2, True)
@@ -209,7 +204,13 @@ while True:
                 print 'Program Ended'
                 break
         elif char == "w":
-		forward()
+		motor1.start(65)
+		motor2.start(100)
+        	GPIO.output(A1, True)
+        	GPIO.output(A2, False)
+        	GPIO.output(B1, False)
+	        GPIO.output(B2, True)
+#		forward()
 #               motor1.ChangeDutyCycle(65)
 #               motor2.ChangeDutyCycle(100)
 	
