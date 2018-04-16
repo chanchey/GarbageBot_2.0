@@ -160,9 +160,9 @@ while True:
 		elif yrot<-80 & yrot>-90: 
 			DC=95
 		return DC 
-	if yrot<0 
+	if yrot<0: 
 		forward()
-	elif yrot>0 
+	elif yrot>0: 
 		reverse
 
 
