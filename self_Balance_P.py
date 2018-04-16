@@ -11,6 +11,36 @@ yrot=0.0;
 #Scaling Factor to level bot 
 makeMeLevelY=0.0 
 
+#Controller Variables 
+A1 = 6	#M3
+A2 = 13	#M4
+B1 = 20	#M1
+B2 = 21	#M2
+D1 = 12	#PWMB
+D2 = 26	#PWMA
+
+#set GPIO numbering mode and define output pins
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+GPIO.setup(A1,GPIO.OUT)
+GPIO.setup(A2,GPIO.OUT)
+GPIO.setup(B1,GPIO.OUT)
+GPIO.setup(B2,GPIO.OUT)
+GPIO.setup(D1,GPIO.OUT)
+GPIO.setup(D2,GPIO.OUT)
+
+GPIO.output(A1, False)
+GPIO.output(A2, False)
+GPIO.output(B1, False)
+GPIO.output(B2, False)
+
+motor1 = GPIO.PWM(D1,500)
+motor2 = GPIO.PWM(D2,500)
+motor1.start(0)
+motor2.start(0)
+DC=0.0
+
 while True: 
 	def getGyro ():
 
@@ -78,37 +108,6 @@ while True:
 
 	yrot=(yrot1+yrot2+yrot3+yrot4+yrot5)/5
 
-
-
-	#Controller Variables 
-	A1 = 6	#M3
-	A2 = 13	#M4
-	B1 = 20	#M1
-	B2 = 21	#M2
-	D1 = 12	#PWMB
-	D2 = 26	#PWMA
-
-	#set GPIO numbering mode and define output pins
-	GPIO.setmode(GPIO.BCM)
-	GPIO.setwarnings(False)
-
-	GPIO.setup(A1,GPIO.OUT)
-	GPIO.setup(A2,GPIO.OUT)
-	GPIO.setup(B1,GPIO.OUT)
-	GPIO.setup(B2,GPIO.OUT)
-	GPIO.setup(D1,GPIO.OUT)
-	GPIO.setup(D2,GPIO.OUT)
-
-	GPIO.output(A1, False)
-	GPIO.output(A2, False)
-	GPIO.output(B1, False)
-	GPIO.output(B2, False)
-
-	motor1 = GPIO.PWM(D1,500)
-	motor2 = GPIO.PWM(D2,500)
-	motor1.start(0)
-	motor2.start(0)
-	DC=0.0
 	def forward():
         	GPIO.output(A1, True)
         	GPIO.output(A2, False)
@@ -127,7 +126,7 @@ while True:
 	def getDC():
 		if 0<=yrot<=30:DC=20
 		return DC 
-	DC=getDC
+	DC=getDC()
 	print (DC)
 	
 	
