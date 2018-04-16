@@ -55,8 +55,8 @@ motor2PWM = 5000
 
 motor1 = GPIO.PWM(D1,motor1PWM)
 motor2 = GPIO.PWM(D2,motor1PWM)
-motor1.start(0)
-motor2.start(0)
+#motor1.start(0)
+#motor2.start(0)
 
 #Encoder globals
 Ae1 = 18	#GPIO18 encoder
