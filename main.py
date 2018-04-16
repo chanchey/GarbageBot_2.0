@@ -201,7 +201,7 @@ def getGyro ():
 
 #While 
 #for i in range(600):
-while True
+while True:
 	char = getch()
         if char == "q":
                 print 'Program Ended'
