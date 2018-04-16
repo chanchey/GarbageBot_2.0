@@ -50,8 +50,8 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1PWM = 5000
-motor2PWM = 5000
+motor1PWM = 10000
+motor2PWM = 10000
 
 motor1 = GPIO.PWM(D1,motor1PWM)
 motor2 = GPIO.PWM(D2,motor1PWM)
