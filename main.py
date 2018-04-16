@@ -194,26 +194,26 @@ def getGyro ():
 
 #While 
 for i in range(600):
-	char = getch()
+#	char = getch()
         if char == "q":
                 print 'Program Ended'
                 break
-        if char == "w":
+        elif char == "w":
 		forward()
 		motor1.ChangeDutyCycle(65)
 		motor2.ChangeDutyCycle(100)
 		
-	if char == "s":
+	elif char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
 				                      
-        if char == "d":
+        elif char == "d":
                 right()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
                 
-        if char == "a":
+        elif char == "a":
                 left()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
