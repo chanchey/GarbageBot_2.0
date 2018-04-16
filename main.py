@@ -202,7 +202,7 @@ for i in range(600):
 		forward()
 		motor1.ChangeDutyCycle(65)
 		motor2.ChangeDutyCycle(100)
-		time.sleep(.1)
+		
 	elif char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(65)
@@ -217,7 +217,7 @@ for i in range(600):
                 left()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-      
+	fi	
         time.sleep(.2)        
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)
