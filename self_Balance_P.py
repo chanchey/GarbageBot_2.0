@@ -127,6 +127,7 @@ while True:
 	
 	
 	def getDC (): 
+		Scale=0.0
 		if 0<=yrot<=10:
 			Scale=25 
 		elif 10<yrot<=20: 
