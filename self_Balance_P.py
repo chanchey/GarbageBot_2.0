@@ -144,6 +144,6 @@ while True:
 	elif yrot>0: 
 		reverse()
 
-
+GPIO.cleanup()
 
 
