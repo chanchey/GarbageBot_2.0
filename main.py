@@ -204,7 +204,9 @@ for i in range(600):
                 print 'Program Ended'
                 break
         elif char == "w":
-                forward()
+                motor1.start(65)
+		motor2.start(100)
+		forward()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
 	
