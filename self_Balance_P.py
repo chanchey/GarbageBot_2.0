@@ -124,24 +124,39 @@ while True:
 		motor1.ChangeDutyCycle(DC1)
 		motor2.ChangeDutyCycle(DC1)
 	def getDC():
-		if 0<=yrot<=5:DC=55
-		elif 5<yrot<=20:DC=60
-		elif 20<yrot<=30:DC=70
-		elif 30<yrot<=40:DC=80
-		elif 40<yrot<=50:DC=90
-		elif 50<yrot<=60:DC=95
-		elif 60<yrot<=70:DC=100
-		elif 70<yrot<=80:DC=100
-		elif 80<yrot<=90:DC=100
-		elif 0>=yrot>=-5:DC=55
-		elif -5>yrot>=-20:DC=60
-		elif -20>yrot>=-30:DC=70
-		elif -30>yrot>=-40:DC=80
-		elif -40>yrot>=-50:DC=90 
-		elif -50>yrot>=-60:DC=100
-		elif -60>yrot>=-70:DC=100
-		elif -70>yrot>=-80:DC=100
-		elif -80>yrot>=-90:DC=100
+		theP=70;
+		if 0<=yrot<=1:DC=theP+1
+		elif 1<yrot<=2:DC=theP+2
+		elif 2<yrot<=3:DC=theP+3
+		elif 3<yrot<=4:DC=theP+4
+		elif 4<yrot<=5:DC=theP+5
+		elif 5<yrot<=6:DC=theP+6
+		elif 6<yrot<=7:DC=theP+7
+		elif 7<yrot<=8:DC=theP+8
+		elif 8<yrot<=9:DC=theP+9
+		elif 9<yrot<=10:DC=theP+10
+		elif 10<yrot<=11:DC=theP+11
+		elif 11<yrot<=12:DC=theP+12
+		elif 12<yrot<=13:DC=theP+13
+		elif 13<yrot<=14:DC=theP+14
+		elif 14<yrot<=15:DC=theP+15
+		elif 15<yrot<=16:DC=theP+16
+		elif -0>yrot>=-1:DC=theP+1
+		elif -1>yrot>=-2:DC=theP+2
+		elif -2>yrot>=-3:DC=theP+3
+		elif -3>yrot>=-4:DC=theP+4
+		elif -4>yrot>=-5:DC=theP+5
+		elif -5>yrot>=-6:DC=theP+6
+		elif -6>yrot>=-7:DC=theP+7
+		elif -7>yrot>=-8:DC=theP+8
+		elif -8>yrot>=-9:DC=theP+9
+		elif -9>yrot>=-10:DC=theP+10
+		elif -10>yrot>=-11:DC=theP+11
+		elif -11>yrot>=-12:DC=theP+12
+		elif -12>yrot>=-13:DC=theP+13
+		elif -13>yrot>=-14:DC=theP+14
+		elif -14>yrot>=-15:DC=theP+15
+		elif -15>yrot>=-16:DC=theP+16
 			
 		else: DC=0
 		return DC 
