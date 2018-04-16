@@ -127,37 +127,37 @@ while True:
 	
 
 	def getDC (): 
-		if yrot>0 & yrot<10: 
+		if yrot>0 && yrot<10: 
 			DC=25
-		elif yrot>10 & yrot<20: 
+		elif yrot>10 && yrot<20: 
 			DC=35 
-		elif yrot>20 & yrot<30: 
+		elif yrot>20 && yrot<30: 
 			DC=45
-		elif yrot>30 & yrot<40: 
+		elif yrot>30 && yrot<40: 
 			DC=55
-		elif yrot>40 & yrot<50: 
+		elif yrot>40 && yrot<50: 
 			DC=65
-		elif yrot>50 & yrot<60: 
+		elif yrot>50 && yrot<60: 
 			DC=75
-		elif yrot>70 & yrot<80: 
+		elif yrot>70 && yrot<80: 
 			DC=85
-		elif yrot>80 & yrot<90: 
+		elif yrot>80 && yrot<90: 
 			DC=95
 		if yrot<0 & yrot>-10: 
 			DC=25
-		elif yrot<-10 & yrot>-20: 
+		elif yrot<-10 && yrot>-20: 
 			DC=35 
-		elif yrot<-20 & yrot>-30: 
+		elif yrot<-20 && yrot>-30: 
 			DC=45
-		elif yrot<-30 & yrot>-40: 
+		elif yrot<-30 && yrot>-40: 
 			DC=55
-		elif yrot<-40 & yrot>-50: 
+		elif yrot<-40 && yrot>-50: 
 			DC=65
-		elif yrot<-50 & yrot>-60: 
+		elif yrot<-50 && yrot>-60: 
 			DC=75
-		elif yrot<-70 & yrot>-80: 
+		elif yrot<-70 && yrot>-80: 
 			DC=85
-		elif yrot<-80 & yrot>-90: 
+		elif yrot<-80 && yrot>-90: 
 			DC=95
 		return DC 
 	DC= getDC()
