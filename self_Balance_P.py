@@ -147,6 +147,6 @@ while True:
 		return DC 
 	DC1=getDC()
 	print (DC1,yrot)
-	if yrot >0: forward()
+	if yrot <0: forward()
 	else: reverse()
 	
