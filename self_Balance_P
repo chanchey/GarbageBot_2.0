@@ -11,6 +11,7 @@ yrot=0.0;
 #Scaling Factor to level bot 
 makeMeLevelY=0.0 
 
+while True: 
 def getGyro ():
 
 	# Power management registers
@@ -105,34 +106,64 @@ GPIO.output(B2, False)
 
 motor1 = GPIO.PWM(D1,500)
 motor2 = GPIO.PWM(D2,500)
-motor1.start(50)
-motor2.start(50)
+motor1.start(0)
+motor2.start(0)
 
 def forward():
         GPIO.output(A1, True)
         GPIO.output(A2, False)
         GPIO.output(B1, False)
         GPIO.output(B2, True)
+	motor1.ChangeDutyCycle(.65*DC)
+	motor2.ChangeDutyCycle(DC)
+	
 def reverse():
         GPIO.output(A1, False)
         GPIO.output(A2, True)
         GPIO.output(B1, True)
         GPIO.output(B2, False)
-def left():
-        GPIO.output(A1, True)
-        GPIO.output(A2, False)
-        GPIO.output(B1, True)
-        GPIO.output(B2, False)   
-def right():
-        GPIO.output(A1, False)
-        GPIO.output(A2, True)
-        GPIO.output(B1, False)
-        GPIO.output(B2, True)
+	motor1.ChangeDutyCycle(.65*DC)
+	motor2.ChangeDutyCycle(DC)
+	
 
-motor1.ChangeDutyCycle(0)
-motor2.ChangeDutyCycle(0)
-
-
+def getDC (): 
+	if yrot>0 & yrot<10: 
+		DC=25
+	elif yrot>10 & yrot<20: 
+		DC=35 
+	elif yrot>20 & yrot<30: 
+		DC=45
+	elif yrot>30 & yrot<40: 
+		DC=55
+	elif yrot>40 & yrot<50: 
+		DC=65
+	elif yrot>50 & yrot<60: 
+		DC=75
+	elif yrot>70 & yrot<80: 
+		DC=85
+	elif yrot>80 & yrot<90: 
+		DC=95
+	if yrot<0 & yrot>-10: 
+		DC=25
+	elif yrot<-10 & yrot>-20: 
+		DC=35 
+	elif yrot<-20 & yrot>-30: 
+		DC=45
+	elif yrot<-30 & yrot>-40: 
+		DC=55
+	elif yrot<-40 & yrot>-50: 
+		DC=65
+	elif yrot<-50 & yrot>-60: 
+		DC=75
+	elif yrot<-70 & yrot>-80: 
+		DC=85
+	elif yrot<-80 & yrot>-90: 
+		DC=95
+	return DC 
+if yrot<0 
+	forward()
+elif yrot>0 
+	reverse
 
 
 
