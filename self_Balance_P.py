@@ -125,6 +125,7 @@ while True:
 		motor2.ChangeDutyCycle(DC)
 	def getDC():
 		if 0<=yrot<=30:DC=20
+		else: DC=0
 		return DC 
 	DC1=getDC()
 	print (DC1)
