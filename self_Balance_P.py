@@ -126,24 +126,4 @@ while True:
 		motor2.ChangeDutyCycle(DC)
 	
 	
-	def getDC (): 
-		Scale=0.0
-		if 0<=yrot<=10:
-			Scale=25 
-		elif 10<yrot<=20: 
-			Scale=35
-		elif 20<yrot<=30: 
-			Scale=45	
-		elif 30<yrot<=40:
-			Scale=45  
-		return Scale
 	
-	DC= getDC()
-	if yrot<0: 
-		forward()
-	elif yrot>0: 
-		reverse()
-
-GPIO.cleanup()
-
-
