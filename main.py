@@ -198,26 +198,26 @@ for i in range(600):
         if char == "q":
                 print 'Program Ended'
                 break
-        elif char == "w":
+        if char == "w":
 		forward()
 		motor1.ChangeDutyCycle(65)
 		motor2.ChangeDutyCycle(100)
 		
-	elif char == "s":
+	if char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
 				                      
-        elif char == "d":
+        if char == "d":
                 right()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
                 
-        elif char == "a":
+        if char == "a":
                 left()
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
-	fi	
+		
         time.sleep(.2)        
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)
