@@ -53,8 +53,8 @@ GPIO.setup(D2,GPIO.OUT)
 #motor1PWM = 5000
 #motor2PWM = 5000
 
-#motor1 = GPIO.PWM(D1,motor1PWM)
-#motor2 = GPIO.PWM(D2,motor1PWM)
+motor1 = GPIO.PWM(D1,motor1PWM)
+motor2 = GPIO.PWM(D2,motor1PWM)
 #motor1.start(0)
 #motor2.start(0)
 
@@ -118,8 +118,6 @@ def getch():
 def forward():
 	motor1PWM = 5000
 	motor2PWM = 5000
-	motor1 = GPIO.PWM(D1,motor1PWM)
-	motor2 = GPIO.PWM(D2,motor1PWM)
 	motor1.start(65)
 	motor2.start(100)
         GPIO.output(A1, True)
