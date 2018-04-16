@@ -142,7 +142,7 @@ while True:
 	if yrot<0: 
 		forward()
 	elif yrot>0: 
-		reverse
+		reverse()
 
 
 
