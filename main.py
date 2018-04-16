@@ -200,8 +200,9 @@ def getGyro ():
 	return yrot
 
 #While 
-for i in range(600):
-        char = getch()
+#for i in range(600):
+ while True:
+	char = getch()
         if char == "q":
                 print 'Program Ended'
                 break
