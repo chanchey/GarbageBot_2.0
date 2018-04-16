@@ -199,10 +199,10 @@ for i in range(600):
                 print 'Program Ended'
                 break
         elif char == "w":
-#		forward()
+		forward()
 		motor1.ChangeDutyCycle(65)
 		motor2.ChangeDutyCycle(100)
-		forward()		
+		
 	elif char == "s":
                 reverse()
                 motor1.ChangeDutyCycle(65)
