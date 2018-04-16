@@ -113,21 +113,22 @@ while True:
         	GPIO.output(A2, False)
        		GPIO.output(B1, False)
         	GPIO.output(B2, True)
-		motor1.ChangeDutyCycle(.65*DC)
-		motor2.ChangeDutyCycle(DC)
+		motor1.ChangeDutyCycle(.65*DC1)
+		motor2.ChangeDutyCycle(DC1)
 	
 	def reverse():
         	GPIO.output(A1, False)
         	GPIO.output(A2, True)
         	GPIO.output(B1, True)
         	GPIO.output(B2, False)
-		motor1.ChangeDutyCycle(.65*DC)
-		motor2.ChangeDutyCycle(DC)
+		motor1.ChangeDutyCycle(.65*DC1)
+		motor2.ChangeDutyCycle(DC1)
 	def getDC():
 		if 0<=yrot<=30:DC=20
 		else: DC=0
 		return DC 
 	DC1=getDC()
 	print (DC1)
-	
+	if yrot>5: forward(DC1)
+	else: reverse(DC1)
 	
