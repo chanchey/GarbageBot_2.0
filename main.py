@@ -116,6 +116,8 @@ def getch():
     return ch
 
 def forward():
+	motor1.start(65)
+	motor2.start(100)
         GPIO.output(A1, True)
         GPIO.output(A2, False)
         GPIO.output(B1, False)
@@ -204,11 +206,9 @@ for i in range(600):
                 print 'Program Ended'
                 break
         elif char == "w":
-                motor1.start(65)
-		motor2.start(100)
 		forward()
-                motor1.ChangeDutyCycle(65)
-                motor2.ChangeDutyCycle(100)
+#               motor1.ChangeDutyCycle(65)
+#               motor2.ChangeDutyCycle(100)
 	
 	elif char == "s":
                 reverse()
