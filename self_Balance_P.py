@@ -127,11 +127,15 @@ while True:
 	
 	
 	def getDC (): 
-		if 0<=yrot<=10:DC=25 
-		elif 10<yrot<=20: DC=35
-		elif 20<yrot<=30: DC=45	
-		elif 30<yrot<=40: DC=45  
-		return DC 
+		if 0<=yrot<=10:
+			Scale=25 
+		elif 10<yrot<=20: 
+			Scale=35
+		elif 20<yrot<=30: 
+			Scale=45	
+		elif 30<yrot<=40:
+			Scale=45  
+		return Scale
 	
 	DC= getDC()
 	if yrot<0: 
