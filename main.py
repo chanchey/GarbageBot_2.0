@@ -50,10 +50,10 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1 = GPIO.PWM(D1,5000)
-motor2 = GPIO.PWM(D2,5000)
-motor1.start(0)
-motor2.start(0)
+motor1 = GPIO.PWM(D1,500)
+motor2 = GPIO.PWM(D2,500)
+motor1.start(50)
+motor2.start(50)
 
 #Encoder globals
 Ae1 = 18	#GPIO18 encoder
