@@ -67,3 +67,18 @@ def getGyro ():
 	yrot=yrot+makeMeLevelY
 	
 	return yrot
+
+yrot1=getGyro() 
+yrot2=getGyro()
+yrot3=getGyro()
+yrot4=getGyro()
+yrot5=getGyro()
+
+yrot=(yrot1+yrot2+yrot3+yrot4+yrot5)/5
+
+
+
+
+
+
+
