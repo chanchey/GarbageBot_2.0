@@ -200,8 +200,8 @@ for i in range(600):
                 break
         elif char == "w":
 		forward()
-		motor1.ChangeDutyCycle(65)
-		motor2.ChangeDutyCycle(100)
+#		motor1.ChangeDutyCycle(65)
+#		motor2.ChangeDutyCycle(100)
 		
 	elif char == "s":
                 reverse()
