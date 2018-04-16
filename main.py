@@ -194,7 +194,7 @@ def getGyro ():
 
 #While 
 for i in range(600):
-#	char = getch()
+	char = getch()
         if char == "q":
                 print 'Program Ended'
                 break
