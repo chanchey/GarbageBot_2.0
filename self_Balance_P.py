@@ -126,7 +126,7 @@ while True:
 	def getDC():
 		if 0<=yrot<=30:DC=20
 		return DC 
-	DC=getDC()
-	print (DC)
+	DC1=getDC()
+	print (DC1)
 	
 	
