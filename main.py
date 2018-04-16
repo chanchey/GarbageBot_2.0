@@ -223,7 +223,7 @@ for i in range(600):
                 motor1.ChangeDutyCycle(65)
                 motor2.ChangeDutyCycle(100)
       
-        time.sleep(.08)        
+        time.sleep(.001)        
         motor1.ChangeDutyCycle(0)
         motor2.ChangeDutyCycle(0)
 	timestamp=i*.001
