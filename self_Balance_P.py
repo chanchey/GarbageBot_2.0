@@ -35,8 +35,8 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1 = GPIO.PWM(D1,2750)
-motor2 = GPIO.PWM(D2,2750)
+motor1 = GPIO.PWM(D1,2500)
+motor2 = GPIO.PWM(D2,2500)
 motor1.start(0)
 motor2.start(0)
 DC=0.0
@@ -115,6 +115,7 @@ while True:
         	GPIO.output(B2, True)
 		motor1.ChangeDutyCycle(DC1)
 		motor2.ChangeDutyCycle(DC1)
+		
 	
 	def reverse():
         	GPIO.output(A1, False)
@@ -133,8 +134,8 @@ while True:
 		elif 60<yrot<=70:DC=100
 		elif 70<yrot<=80:DC=100
 		elif 80<yrot<=90:DC=100
-		elif -2>=yrot>=-10:DC=90
-		elif -10>yrot>=-20:DC=95
+		elif -2>=yrot>=-10:DC=80
+		elif -10>yrot>=-20:DC=85
 		elif -20>yrot>=-30:DC=95
 		elif -30>yrot>=-40:DC=80
 		elif -40>yrot>=-50:DC=90
