@@ -142,7 +142,7 @@ while True:
 		preverror = error
 		prevoutput = integral
 		
-		return DC1, preverror, prevoutput
+		return DC1
 	
 	DC1=getDC()
 	print (DC1,yrot)
