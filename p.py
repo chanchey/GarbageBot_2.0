@@ -209,7 +209,7 @@ try:
 ##        dtState1 = GPIO.input(B1)
 ##        clkState2 = GPIO.input(A2)
 ##        dtState2 = GPIO.input(B2)
-        if end == 50:
+        if end == 500:
             motor1.ChangeDutyCycle(0)
             motor2.ChangeDutyCycle(0)
             GPIO.cleanup()
