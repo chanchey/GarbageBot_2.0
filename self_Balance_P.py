@@ -35,8 +35,8 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1 = GPIO.PWM(D1,2000)
-motor2 = GPIO.PWM(D2,2000)
+motor1 = GPIO.PWM(D1,2500)
+motor2 = GPIO.PWM(D2,2500)
 motor1.start(0)
 motor2.start(0)
 DC=0.0
