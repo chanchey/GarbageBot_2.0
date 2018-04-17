@@ -157,7 +157,7 @@ GPIO.output(B2, False)
 ##PID
 def PID(gyroaverage,lastgyroaverage,DTT,ITerm): ##,counter1,counter2
         if -1 < gyroaverage < 1 :
-                KP = 10/2
+                KP = 3/2
                 KI = 0
                 KD = 0
         elif -3 < gyroaverage < 3 :
