@@ -137,7 +137,7 @@ while True:
 	derivative = (error - preverror)/step
 	integral = prevoutput + .5*step*(error + preverror)
 		
-	DC1 = kp*error + kd*derivative +ki*integral
+	DC = abs(kp*error + kd*derivative +ki*integral)
 		
 	preverror = error
 	prevoutput = integral
