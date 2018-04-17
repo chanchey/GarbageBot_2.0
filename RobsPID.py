@@ -137,7 +137,7 @@ while True:
 	derivative = (error - preverror)/step
 	integral = prevoutput + .5*step*(error + preverror)
 		
-	DC = abs(kp*error + kd*derivative +ki*integral)
+	DC1 = abs(kp*error + kd*derivative +ki*integral)
 		
 	preverror = error
 	prevoutput = integral
@@ -145,7 +145,7 @@ while True:
 	
 	
 	
-	print (DC,yrot)
+	print (DC1,yrot)
 	if yrot <0: forward()
 	else: reverse()
 	
