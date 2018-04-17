@@ -137,14 +137,14 @@ while True:
 	derivative = (error - preverror)/step
 	integral = prevoutput + .5*step*(error + preverror)
 		
-	DC = kp*error + kd*derivative +ki*integral
+	DC1 = kp*error + kd*derivative +ki*integral
 		
 	preverror = error
 	prevoutput = integral
 		
 	
 	
-	DC1=PIDcontrol()
+	
 	print (DC1,yrot)
 	if yrot <0: forward()
 	else: reverse()
