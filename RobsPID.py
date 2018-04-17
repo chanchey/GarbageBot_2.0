@@ -133,7 +133,7 @@ while True:
 		motor2.ChangeDutyCycle(DC1)
 	
 	#######
-	error = (-8 - yrot)
+	error = (-11 - yrot)
 	derivative = (error - preverror)/step
 	integral = prevoutput + .5*step*(error + preverror)
 		
