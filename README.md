@@ -8,3 +8,8 @@ Procedure for Updating Code
 3) On rasperypi navigate to cd ~/Desktop/GarbageBot_2.0
 4) Run "git pull" this should update all folders 
 5) To run a python program type Python Programname.py
+
+VNC Procedure
+1) Log onto VNC Viewer 
+2) Username is pi 
+3) Password is raspberry
