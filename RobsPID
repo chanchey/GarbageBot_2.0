@@ -41,6 +41,14 @@ motor1.start(0)
 motor2.start(0)
 DC=0.0
 
+kp = 0
+ki = 0
+kd = 0
+step = .05
+integral = 0
+preverror = 0
+prevoutput = 0
+
 while True: 
 	def getGyro ():
 
@@ -123,28 +131,19 @@ while True:
         	GPIO.output(B2, False)
 		motor1.ChangeDutyCycle(DC1)
 		motor2.ChangeDutyCycle(DC1)
-	def getDC():
-		if 0<=yrot<=2:DC=0
-		elif 2<yrot<=20:DC=75
-		elif 20<yrot<=30:DC=90
-		elif 30<yrot<=40:DC=90
-		elif 40<yrot<=50:DC=90
-		elif 50<yrot<=60:DC=95
-		elif 60<yrot<=70:DC=100
-		elif 70<yrot<=80:DC=100
-		elif 80<yrot<=90:DC=100
-		elif 0>=yrot>=-2:DC=0
-		elif -2>yrot>=-20:DC=75
-		elif -20>yrot>=-30:DC=90
-		elif -30>yrot>=-40:DC=90
-		elif -40>yrot>=-50:DC=100 
-		elif -50>yrot>=-60:DC=100
-		elif -60>yrot>=-70:DC=100
-		elif -70>yrot>=-80:DC=100
-		elif -80>yrot>=-90:DC=100
-			
-		else: DC=0
-		return DC 
+	
+	def PIDcontrol():
+		error = (0 - yrot)
+		derivative = (error - preverror)/step
+		integral = prevoutput + .5*step*(error + preverror)
+		
+		DC1 = kp*error + kd*derivative +ki*integral
+		
+		preverror = error
+		prevoutput = integral
+		
+		return DC1, preverror, prevoutput
+	
 	DC1=getDC()
 	print (DC1,yrot)
 	if yrot <0: forward()
