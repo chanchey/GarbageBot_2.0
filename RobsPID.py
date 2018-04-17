@@ -145,7 +145,7 @@ while True:
 	
 	
 	
-	print (DC1,yrot)
+	print (DC,yrot)
 	if yrot <0: forward()
 	else: reverse()
 	
