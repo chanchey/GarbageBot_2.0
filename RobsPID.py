@@ -45,9 +45,7 @@ kp = 0
 ki = 0
 kd = 0
 step = .05
-#integral = 0
-#preverror = 0
-#prevoutput = 0
+
 
 while True: 
 	def getGyro ():
