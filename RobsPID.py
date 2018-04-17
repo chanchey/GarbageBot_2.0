@@ -142,7 +142,8 @@ while True:
 	preverror = error
 	prevoutput = integral
 		
-	
+	if DC1 > 100:
+		DC1 = 100
 	
 	
 	print (DC1,yrot)
