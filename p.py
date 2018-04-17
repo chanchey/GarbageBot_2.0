@@ -213,7 +213,7 @@ try:
             motor1.ChangeDutyCycle(0)
             motor2.ChangeDutyCycle(0)
             GPIO.cleanup()
-	        f.close()
+            f.close()
             sys.exit()
             break
         if complexcounter == 1 :
