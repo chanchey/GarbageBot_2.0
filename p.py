@@ -199,6 +199,8 @@ try:
         gyrosum += get_y_rotation()
     lastgyroaverage = gyroaverage
     firstgyroaverage = gyrosum/50
+    print("y: %r" %firstgyroaverage)
+    f.write("y: %r" %firstgyroaverage)
     gyroaverage = 0
     gyrosum = 0
     while True:              
@@ -218,11 +220,11 @@ try:
 ##        if complexcounter == 501 :
 ##            DTE = time.time() - TIme
 ##            f.write("%r %r %r\n" %(counter1,counter2,DTE))
-        if 0 < complexcounter <= 50 :
+        if complexcounter <= 5 :
             gyrosum += get_y_rotation()
-        if complexcounter == 51 :
+        if complexcounter == 6 :
             lastgyroaverage = gyroaverage 
-            gyroaverage = gyrosum/50 - firstgyroaverage
+            gyroaverage = gyrosum/5 - firstgyroaverage
             gyrosum = 0
             DTT = time.time() - TIme
             print("x: %r y: %r dt: %r\r\n" %(0, gyroaverage,DTT))
