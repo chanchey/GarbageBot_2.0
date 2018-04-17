@@ -45,7 +45,9 @@ kp = 0
 ki = 0
 kd = 0
 step = .05
-
+integral = 0
+preverror = 0
+prevoutput = 0
 
 while True: 
 	def getGyro ():
@@ -130,17 +132,17 @@ while True:
 		motor1.ChangeDutyCycle(DC1)
 		motor2.ChangeDutyCycle(DC1)
 	
-	def PIDcontrol():
-		error = (0 - yrot)
-		derivative = (error - preverror)/step
-		integral = prevoutput + .5*step*(error + preverror)
+	#######
+	error = (0 - yrot)
+	derivative = (error - preverror)/step
+	integral = prevoutput + .5*step*(error + preverror)
 		
-		DC = kp*error + kd*derivative +ki*integral
+	DC = kp*error + kd*derivative +ki*integral
 		
-		preverror = error
-		prevoutput = integral
+	preverror = error
+	prevoutput = integral
 		
-		return DC
+	
 	
 	DC1=PIDcontrol()
 	print (DC1,yrot)
