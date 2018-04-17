@@ -144,7 +144,7 @@ while True:
 		
 		return DC
 	
-	DC1=getDC()
+	DC1=PIDcontrol()
 	print (DC1,yrot)
 	if yrot <0: forward()
 	else: reverse()
