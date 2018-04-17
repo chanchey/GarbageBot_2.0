@@ -134,7 +134,7 @@ while True:
 		elif 60<yrot<=70:DC=100
 		elif 70<yrot<=80:DC=100
 		elif 80<yrot<=90:DC=100
-		elif -2>=yrot>=-10:DC=80
+		elif -2>=yrot>=-10:DC=75
 		elif -10>yrot>=-20:DC=85
 		elif -20>yrot>=-30:DC=95
 		elif -30>yrot>=-40:DC=80
