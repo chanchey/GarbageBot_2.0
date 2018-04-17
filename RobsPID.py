@@ -137,12 +137,12 @@ while True:
 		derivative = (error - preverror)/step
 		integral = prevoutput + .5*step*(error + preverror)
 		
-		DC1 = kp*error + kd*derivative +ki*integral
+		DC = kp*error + kd*derivative +ki*integral
 		
 		preverror = error
 		prevoutput = integral
 		
-		return DC1
+		return DC
 	
 	DC1=getDC()
 	print (DC1,yrot)
