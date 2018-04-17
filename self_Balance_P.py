@@ -125,11 +125,11 @@ while True:
 		motor2.ChangeDutyCycle(DC1)
 	def getDC():
 		if 0<=yrot<=5:DC=80
-		elif 5<yrot<=10:DC=85
-		elif 20<yrot<=30:DC=90
-		elif 30<yrot<=40:DC=90
-		elif 40<yrot<=50:DC=90
-		elif 50<yrot<=60:DC=95
+		elif 5<yrot<=10:DC=80
+		elif 20<yrot<=30:DC=80
+		elif 30<yrot<=40:DC=100
+		elif 40<yrot<=50:DC=80
+		elif 50<yrot<=60:DC=80
 		elif 60<yrot<=70:DC=100
 		elif 70<yrot<=80:DC=100
 		elif 80<yrot<=90:DC=100
