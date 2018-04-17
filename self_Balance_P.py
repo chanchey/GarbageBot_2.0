@@ -35,8 +35,8 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1 = GPIO.PWM(D1,500)
-motor2 = GPIO.PWM(D2,500)
+motor1 = GPIO.PWM(D1,5000)
+motor2 = GPIO.PWM(D2,5000)
 motor1.start(0)
 motor2.start(0)
 DC=0.0
@@ -135,7 +135,7 @@ while True:
 		elif 80<yrot<=90:DC=100
 		elif -2>=yrot>=-10:DC=80
 		elif -10>yrot>=-20:DC=90
-		elif -20>yrot>=-30:DC=85
+		elif -20>yrot>=-30:DC=95
 		elif -30>yrot>=-40:DC=80
 		elif -40>yrot>=-50:DC=90
 		elif -50>yrot>=-60:DC=100
