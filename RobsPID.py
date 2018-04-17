@@ -41,7 +41,7 @@ motor1.start(0)
 motor2.start(0)
 DC=0.0
 
-kp = 3
+kp = 10
 ki = 0
 kd = 0
 step = .05
