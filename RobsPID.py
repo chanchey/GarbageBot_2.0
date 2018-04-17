@@ -41,7 +41,7 @@ motor1.start(0)
 motor2.start(0)
 DC=0.0
 
-kp = 20
+kp = 10
 ki = 0
 kd = 0
 step = .05
@@ -133,7 +133,7 @@ while True:
 		motor2.ChangeDutyCycle(DC1)
 	
 	#######
-	error = (6 - yrot)
+	error = (4 - yrot)
 	derivative = (error - preverror)/step
 	integral = prevoutput + .5*step*(error + preverror)
 		
