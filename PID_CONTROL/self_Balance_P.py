@@ -108,6 +108,11 @@ while True:
 
 	yrot=(yrot1+yrot2+yrot3+yrot4+yrot5)/5
 
+#	for i in range(499):
+#		yrotSum += getGyro()
+#		
+#	yrot=yrotSum/500
+	
 	def forward():
         	GPIO.output(A1, True)
         	GPIO.output(A2, False)
@@ -124,6 +129,15 @@ while True:
         	GPIO.output(B2, False)
 		motor1.ChangeDutyCycle(DC1)
 		motor2.ChangeDutyCycle(DC1)
+		
+	def stop():
+		GPIO.output(A1, False)
+		GPIO.output(A2, False)
+		GPIO.output(B1, False)
+		GPIO.output(B2, False)
+		motor1.ChangeDutyCycle(0)
+		motor2.ChangeDutyCycle(0)
+		
 	def getDC():
 		if 2<=yrot<=10:DC=50
 		elif 5<yrot<=10:DC=60
@@ -143,10 +157,11 @@ while True:
 		elif -60>yrot>=-70:DC=100
 		elif -70>yrot>=-80:DC=100
 		elif -80>yrot>=-90:DC=100
-		else: DC=0
+#		else: DC=0
 		return DC 
 	DC1=getDC()
 	print (DC1,yrot)
 	if yrot <0: forward()
-	else: reverse()
+	elif yrot >0: reverse()
+	elif yrot =0: stop()
 	
