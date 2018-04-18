@@ -163,5 +163,5 @@ while True:
 	print (DC1,yrot)
 	if yrot <0: forward()
 	elif yrot >0: reverse()
-	elif yrot =0: stop()
+	elif yrot ==0: stop()
 	
