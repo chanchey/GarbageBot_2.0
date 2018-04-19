@@ -170,7 +170,7 @@ while True:
 		return DC
 	            
     		if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)==False:
-	    		print 'forward'
+	    		print "forward"
    		elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
 	    		print 'reverse'
     		else: print 'motorA not moving'
