@@ -167,8 +167,8 @@ while True:
 		elif 40<yrot<=50:DC=82
 		elif 50<yrot<=60:DC=85 
 		elif 60<yrot:DC=0
-		elif -2>=yrot>=-10:DC=75
-		elif -10>yrot>=-20: DC=77
+		elif -1.5>=yrot>=-7.5:DC=75
+		elif -7.5>yrot>=-20: DC=77
 		elif -20>yrot>=-30:DC=83
 		elif -40>yrot>=-40:DC=84
 		elif -40>yrot>=-50:DC=85
@@ -179,13 +179,13 @@ while True:
 		return DC
 	            
     	if GPIO.event_detected(encoderA1)==True and GPIO.event_detected(encoderB1)!=True:
-		print 'forwardMotor1'
+		motor1 = 'forward'
    	if GPIO.event_detected(encoderA1)!=True and GPIO.event_detected(encoderB1)==True:
-		print 'reverseMotor1'
+		motor1 = 'reverse'
     	if GPIO.event_detected(encoderA2)!=True and GPIO.event_detected(encoderB2)==True:
-		print 'forwardMotor2'
+		motor2 = 'forward'
     	if GPIO.event_detected(encoderA2)==True and GPIO.event_detected(encoderB2)!=True:
-		print 'reverseMotor2'
+		motor2 = 'reverse
 
 	DC1=getDC()
 	shitA1 = GPIO.event_detected(encoderA1)
@@ -194,7 +194,7 @@ while True:
 	shitB2 = GPIO.event_detected(encoderB2)
 	print (DC1,yrot)
 	time1=time.time()-start
-	f.write("A1:%r	B1:%r	A2:%r	B2:%r\r\n" %(shitA1, shitB1, shitA2, shitB2))
+	f.write("A1:%r	B1:%r	motor1:%r	A2:%r	B2:%r	motor2:%r\r\n" %(shitA1, shitB1, motor1, shitA2, shitB2, motor2))
 	#f.write("PWM:%.5r	yrot:%.5r\r\n" %(DC1,yrot))
 	if yrot <0: forward()
 	elif yrot>0: reverse()
