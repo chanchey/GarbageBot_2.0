@@ -8,7 +8,7 @@ import RPi.GPIO as GPIO
 from RPi import GPIO
 from time import sleep
 
-f=open("Test1Data.txt","w+")
+f=open("TestDisDawg.txt","w+")
 
 #Encoder variables
 encoderA1=18
