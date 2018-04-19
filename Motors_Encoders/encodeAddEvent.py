@@ -185,7 +185,7 @@ while True:
 	shitA2 = GPIO.event_detected(encoderA2)
 	shitB1 = GPIO.event_detected(encoderB1)
 	shitB2 = GPIO.event_detected(encoderB2)
-	print (DC1,yrot)
+	print (DC1,yrot,shitA1,shitB1,shitA2,shitB2)
 	time1=time.time()-start
 	f.write("DC1:%5r	yrot:%.5r	time:%.5r\r\n" %(DC1, yrot, time1))
 	#f.write("PWM:%.5r	yrot:%.5r\r\n" %(DC1,yrot))
