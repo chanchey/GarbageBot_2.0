@@ -169,7 +169,7 @@ while True:
 		else: DC=0
 		return DC
 	            
-    		if GPIO.event_detected(encoderA1) > GPIO.event_detected(encoderB1):
+    		if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)==False:
 	    		print 'forward'
    		elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
 	    		print 'reverse'
