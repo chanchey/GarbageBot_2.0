@@ -170,14 +170,14 @@ while True:
 		return DC
 	            
     	if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)!=True:
-		print 'forwardMotor1'
-   	elif GPIO.event_detected(encoderA1)!=True & GPIO.event_detected(encoderB1)==True:
 		print 'reverseMotor1'
+   	elif GPIO.event_detected(encoderA1)!=True & GPIO.event_detected(encoderB1)==True:
+		print 'forwardMotor1'
 
     	if GPIO.event_detected(encoderA2)!=True & GPIO.event_detected(encoderB2)==True:
-		print 'forwardMotor2'
-    	elif GPIO.event_detected(encoderA2)==True & GPIO.event_detected(encoderB2)!=True:
 		print 'reverseMotor2'
+    	elif GPIO.event_detected(encoderA2)==True & GPIO.event_detected(encoderB2)!=True:
+		print 'forwardMotor2'
 
 	DC1=getDC()
 #	shitA1 = GPIO.event_detected(encoderA1)
