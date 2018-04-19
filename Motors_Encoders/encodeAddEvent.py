@@ -23,10 +23,10 @@ GPIO.setup(encoderB1, GPIO.IN)
 GPIO.setup(encoderA2, GPIO.IN)
 GPIO.setup(encoderB2, GPIO.IN)
 
-GPIO.add_event_detect(encoderA1,GPIO.BOTH)
-GPIO.add_event_detect(encoderB1,GPIO.BOTH)
-GPIO.add_event_detect(encoderA2,GPIO.BOTH)
-GPIO.add_event_detect(encoderB2,GPIO.BOTH)
+GPIO.add_event_detect(encoderA1,GPIO.RISING)
+GPIO.add_event_detect(encoderB1,GPIO.RISING)
+GPIO.add_event_detect(encoderA2,GPIO.RISING)
+GPIO.add_event_detect(encoderB2,GPIO.RISING)
 
 #Global Variables this will modify 
 yrot=0.0; 
@@ -169,17 +169,17 @@ while True:
 		else: DC=0
 		return DC
 	            
-#    		if GPIO.event_detected(encoderA1) & GPIO.event_detected(encoderB1):
-#	    		print "forward"
-#   		elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
-#	    		print 'reverse'
-#    		else: print 'motorA not moving'
-#
-#    		if GPIO.event_detected(encoderA2) < GPIO.event_detected(encoderB2):
-#	    		print 'forward'
-#    		elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2):
-#	    		print 'reverse'
-#    		else: print 'motorB not moving'
+    		if GPIO.event_detected(encoderA1) > GPIO.event_detected(encoderB1):
+	    		print "forward"
+   		elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
+	    		print 'reverse'
+    		else: print 'motorA not moving'
+
+    		if GPIO.event_detected(encoderA2) < GPIO.event_detected(encoderB2):
+	    		print 'forward'
+    		elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2):
+	    		print 'reverse'
+    		else: print 'motorB not moving'
 	DC1=getDC()
 	shitA1 = GPIO.event_detected(encoderA1)
 	shitA2 = GPIO.event_detected(encoderA2)
