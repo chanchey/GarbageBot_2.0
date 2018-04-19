@@ -35,7 +35,7 @@ GPIO.add_event_detect(encoderB2,GPIO.RISING)
 yrot=0.0; 
 
 #Scaling Factor to level bot 
-makeMeLevelY= 5
+makeMeLevelY= 4
 
 #Controller Variables 
 A1 = 6	#M3
