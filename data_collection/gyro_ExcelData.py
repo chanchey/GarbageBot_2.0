@@ -19,6 +19,8 @@ power_mgmt_2 = 0x6c
 
 f=open("testing.csv","w+")
 
+#Set Time to see total time 
+intialStart=time.time()
 
 def read_byte(adr):
 	return bus.read_byte_data(address, adr)
@@ -69,7 +71,8 @@ while True:
 	
 	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
 	endtime=time.time()-starttime
-	f.write("%r, %r\r\n" %(yrot, endtime,))
-
+	actualtime=time.time-initialStart
+	f.write("%r, %r, %actualtime\r\n" %(yrot, endtime,))
+	print("%r" %actualtime)
 	
 	
