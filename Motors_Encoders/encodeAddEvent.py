@@ -169,22 +169,22 @@ while True:
 		else: DC=0
 		return DC
 	            
-    	if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)==False:
-		print 'forward'
-   	elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
-		print 'reverse'
-    	else: print 'motorA not moving'
-
-    	if GPIO.event_detected(encoderA2) < GPIO.event_detected(encoderB2):
-		print 'forward'
-    	elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2):
-		print 'reverse'
-    	else: print 'motorB not moving'
+    	#if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)==False:
+	#	print 'forward'
+   	#elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
+#		print 'reverse'
+ #   	else: print 'motorA not moving'
+#
+ #   	if GPIO.event_detected(encoderA2) < GPIO.event_detected(encoderB2):
+#		print 'forward'
+ #   	elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2):
+#		print 'reverse'
+ #   	else: print 'motorB not moving'
 	DC1=getDC()
-	#shitA1 = GPIO.event_detected(encoderA1)
-	#shitA2 = GPIO.event_detected(encoderA2)
-	#shitB1 = GPIO.event_detected(encoderB1)
-	#shitB2 = GPIO.event_detected(encoderB2)
+	shitA1 = GPIO.event_detected(encoderA1)
+	shitA2 = GPIO.event_detected(encoderA2)
+	shitB1 = GPIO.event_detected(encoderB1)
+	shitB2 = GPIO.event_detected(encoderB2)
 	print (DC1,yrot)
 	time1=time.time()-start
 	f.write("DC1:%5r	yrot:%.5r	time:%.5r\r\n" %(DC1, yrot, time1))
