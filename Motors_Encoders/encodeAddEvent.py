@@ -16,6 +16,9 @@ encoderB1=15
 encoderA2=8
 encoderB2=25
 
+motorDir1 = 0
+motorDir2 = 0
+
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(encoderA1, GPIO.IN)
