@@ -23,10 +23,10 @@ GPIO.setup(encoderB1, GPIO.IN)
 GPIO.setup(encoderA2, GPIO.IN)
 GPIO.setup(encoderB2, GPIO.IN)
 
-GPIO.add_event_detect(encoderA1,GPIO.BOTH)
-GPIO.add_event_detect(encoderB1,GPIO.BOTH)
-GPIO.add_event_detect(encoderA2,GPIO.BOTH)
-GPIO.add_event_detect(encoderB2,GPIO.BOTH)
+GPIO.add_event_detect(encoderA1,GPIO.RISING)
+GPIO.add_event_detect(encoderB1,GPIO.RISING)
+GPIO.add_event_detect(encoderA2,GPIO.RISING)
+GPIO.add_event_detect(encoderB2,GPIO.RISING)
 
 #Global Variables this will modify 
 yrot=0.0; 
