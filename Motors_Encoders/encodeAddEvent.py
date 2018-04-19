@@ -169,7 +169,7 @@ while True:
 		else: DC=0
 		return DC
 	            
-    	if GPIO.event_detected(encoderA1) > GPIO.event_detected(encoderB1):
+    	if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)==False:
 		print 'forward'
    	elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
 		print 'reverse'
@@ -181,11 +181,11 @@ while True:
 		print 'reverse'
     	else: print 'motorB not moving'
 	DC1=getDC()
-	shitA1 = GPIO.event_detected(encoderA1)
-	shitA2 = GPIO.event_detected(encoderA2)
-	shitB1 = GPIO.event_detected(encoderB1)
-	shitB2 = GPIO.event_detected(encoderB2)
-	print (DC1,yrot,shitA1,shitA2,shitB1,shitB2)
+	#shitA1 = GPIO.event_detected(encoderA1)
+	#shitA2 = GPIO.event_detected(encoderA2)
+	#shitB1 = GPIO.event_detected(encoderB1)
+	#shitB2 = GPIO.event_detected(encoderB2)
+	print (DC1,yrot)
 	time1=time.time()-start
 	f.write("DC1:%5r	yrot:%.5r	time:%.5r\r\n" %(DC1, yrot, time1))
 	#f.write("PWM:%.5r	yrot:%.5r\r\n" %(DC1,yrot))
