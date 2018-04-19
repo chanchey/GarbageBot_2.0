@@ -185,7 +185,7 @@ while True:
     	if GPIO.event_detected(encoderA2)!=True and GPIO.event_detected(encoderB2)==True:
 		motor2 = 'forward'
     	if GPIO.event_detected(encoderA2)==True and GPIO.event_detected(encoderB2)!=True:
-		motor2 = 'reverse
+		motor2 = 'reverse'
 
 	DC1=getDC()
 	shitA1 = GPIO.event_detected(encoderA1)
