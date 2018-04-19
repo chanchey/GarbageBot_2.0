@@ -163,7 +163,7 @@ while True:
 	#yrot=yrotSum/2
         yrot=getGyro()
 	def getDC():
-		if 5<=yrot<=10:DC=75
+		if 2<=yrot<=10:DC=75
 		elif 10<yrot<=20:DC=77
 		elif 20<yrot<=30:DC=79.5
 		elif 30<yrot<=40:DC=81
