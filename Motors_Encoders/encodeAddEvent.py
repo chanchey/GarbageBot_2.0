@@ -16,6 +16,11 @@ encoderB1=15
 encoderA2=8
 encoderB2=25
 
+GPIO.setup(encoderA1, GPIO.IN)
+GPIO.setup(encoderB1, GPIO.IN)
+GPIO.setup(encoderA2, GPIO.IN)
+GPIO.setup(encoderB2, GPIO.IN)
+
 GPIO.setmode(GPIO.BCM)
 GPIO.add_event_detect(encoderA1,GPIO.RISING)
 GPIO.add_event_detect(encoderB1,GPIO.RISING)
