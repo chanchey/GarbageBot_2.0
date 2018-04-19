@@ -71,7 +71,7 @@ while True:
 	
 	yrot= get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
 	endtime=time.time()-starttime
-	actualtime=time.time-intialStart
+	actualtime=time.time()-intialStart
 	f.write("%r, %r, %actualtime\r\n" %(yrot, endtime,))
 	print("%r" %actualtime)
 	
