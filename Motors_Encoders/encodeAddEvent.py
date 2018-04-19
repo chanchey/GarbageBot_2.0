@@ -35,7 +35,7 @@ GPIO.add_event_detect(encoderB2,GPIO.RISING)
 yrot=0.0; 
 
 #Scaling Factor to level bot 
-makeMeLevelY= 6.5
+makeMeLevelY= 6
 
 #Controller Variables 
 A1 = 6	#M3
@@ -163,14 +163,14 @@ while True:
 	#yrot=yrotSum/2
         yrot=getGyro()
 	def getDC():
-		if 1<=yrot<=2:DC=92
+		if 1.25<=yrot<=2:DC=92
 		elif 2<yrot<=2.5:DC=96
 		elif 2.5<yrot<=3.5:DC=98
 		elif 3.5<yrot<=40:DC=100
 		elif 40<yrot<=50:DC=100
 		elif 50<yrot<=60:DC=100
 		elif 60<yrot:DC=0
-		elif -1>=yrot>=-2:DC=65
+		elif -1.25>=yrot>=-2:DC=65
 		elif -2>yrot>=-2.5: DC=70
 		elif -2.5>yrot>=-3:DC=95
 		elif -3>yrot>=-40:DC=100
