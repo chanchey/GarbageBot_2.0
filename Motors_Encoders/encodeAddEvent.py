@@ -165,13 +165,13 @@ while True:
 	            
     		if GPIO.event_detected(encoderA1) > GPIO.event_detected(encoderB1):
 	    		print 'forward'
-    		elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1);
+    		elif GPIO.event_detected(encoderA1) < GPIO.event_detected(encoderB1):
 	    		print 'reverse'
     		else: print 'motorA not moving'
 
     		if GPIO.event_detected(encoderA2) < GPIO.event_detected(encoderB2):
 	    		print 'forward'
-    		elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2);
+    		elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2):
 	    		print 'reverse'
     		else: print 'motorB not moving'
 	DC1=getDC()
