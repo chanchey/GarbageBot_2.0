@@ -199,5 +199,5 @@ while True:
 	#f.write("PWM:%.5r	yrot:%.5r\r\n" %(DC1,yrot))
 	if yrot <0: forward()
 	elif yrot>0: reverse()
-	elis yrot==0: stop()
+	elif yrot==0: stop()
 f.close()
