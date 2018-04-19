@@ -82,7 +82,7 @@ def reverse():
        	motor1.ChangeDutyCycle(DC1)
        	motor2.ChangeDutyCycle(DC1)
 	
-def reverse():
+def stop():
        	GPIO.output(A1, False)
        	GPIO.output(A2, False)
        	GPIO.output(B1, False)
@@ -198,5 +198,6 @@ while True:
 	f.write("A1:%r	B1:%r	A2:%r	B2:%r\r\n" %(shitA1, shitB1, shitA2, shitB2))
 	#f.write("PWM:%.5r	yrot:%.5r\r\n" %(DC1,yrot))
 	if yrot <0: forward()
-	else: reverse()
+	elif yrot>0: reverse()
+	elis yrot=0: stop()
 f.close()
