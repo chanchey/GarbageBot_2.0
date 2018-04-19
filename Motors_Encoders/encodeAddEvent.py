@@ -163,7 +163,7 @@ while True:
 	#yrot=yrotSum/2
         yrot=getGyro()
 	def getDC():
-		if 2<=yrot<=10:DC=75
+		if 5<=yrot<=10:DC=75
 		elif 10<yrot<=20:DC=77
 		elif 20<yrot<=30:DC=79.5
 		elif 30<yrot<=40:DC=81
@@ -186,9 +186,9 @@ while True:
    	if GPIO.event_detected(encoderA1)!=True and GPIO.event_detected(encoderB1)==True:
 		motorDir1 = 'reverse'
     	if GPIO.event_detected(encoderA2)!=True and GPIO.event_detected(encoderB2)==True:
-		motorDir2 = 'forward'
-    	if GPIO.event_detected(encoderA2)==True and GPIO.event_detected(encoderB2)!=True:
 		motorDir2 = 'reverse'
+    	if GPIO.event_detected(encoderA2)==True and GPIO.event_detected(encoderB2)!=True:
+		motorDir2 = 'forward'
 
 	DC1=getDC()
 	shitA1 = GPIO.event_detected(encoderA1)
