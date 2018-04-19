@@ -32,7 +32,7 @@ GPIO.add_event_detect(encoderB2,GPIO.RISING)
 yrot=0.0; 
 
 #Scaling Factor to level bot 
-makeMeLevelY= 8
+makeMeLevelY= 5
 
 #Controller Variables 
 A1 = 6	#M3
@@ -178,14 +178,13 @@ while True:
 		else: DC=0
 		return DC
 	            
-    	if GPIO.event_detected(encoderA1)==True & GPIO.event_detected(encoderB1)!=True:
+    	if GPIO.event_detected(encoderA1)==True And GPIO.event_detected(encoderB1)!=True:
 		print 'forwardMotor1'
-   	elif GPIO.event_detected(encoderA1)!=True & GPIO.event_detected(encoderB1)==True:
+   	if GPIO.event_detected(encoderA1)!=True And GPIO.event_detected(encoderB1)==True:
 		print 'reverseMotor1'
-
-    	if GPIO.event_detected(encoderA2)!=True & GPIO.event_detected(encoderB2)==True:
+    	if GPIO.event_detected(encoderA2)!=True And GPIO.event_detected(encoderB2)==True:
 		print 'forwardMotor2'
-    	elif GPIO.event_detected(encoderA2)==True & GPIO.event_detected(encoderB2)!=True:
+    	if GPIO.event_detected(encoderA2)==True And GPIO.event_detected(encoderB2)!=True:
 		print 'reverseMotor2'
 
 	DC1=getDC()
