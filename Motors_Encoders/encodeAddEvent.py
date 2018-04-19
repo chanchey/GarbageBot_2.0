@@ -174,11 +174,11 @@ while True:
    	elif GPIO.event_detected(encoderA1)!=True & GPIO.event_detected(encoderB1)==True:
 		print 'reverse'
 
-    	if GPIO.event_detected(encoderA2) < GPIO.event_detected(encoderB2):
+    	if GPIO.event_detected(encoderA2)!=True & GPIO.event_detected(encoderB2)==True:
 		print 'forward'
-    	elif GPIO.event_detected(encoderA2) > GPIO.event_detected(encoderB2):
+    	elif GPIO.event_detected(encoderA2)==True & GPIO.event_detected(encoderB2)!=True:
 		print 'reverse'
-    	else: print 'motorB not moving'
+
 	DC1=getDC()
 #	shitA1 = GPIO.event_detected(encoderA1)
 #	shitA2 = GPIO.event_detected(encoderA2)
