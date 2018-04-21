@@ -5,9 +5,6 @@ import smbus
 import math
 import time
 
-#Global Variables this will modify 
-yrot=0.0; 
-
 #Scaling Factor to level bot 
 makeMeLevelY=0.0 
 
@@ -15,7 +12,7 @@ makeMeLevelY=0.0
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
 
-#Open Test File for Writing 
+#Open Test File for Writing to excel
 
 f=open("testing.csv","w+")
 
