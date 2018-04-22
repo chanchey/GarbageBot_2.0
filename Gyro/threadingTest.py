@@ -5,17 +5,17 @@ import math
 import time
 from threading import Thread
 
-# Global Variables this will modify 
+# Global Variables this will modify
 yrot = 0.0;
 
-# Scaling Factor to level bot 
+# Scaling Factor to level bot
 makeMeLevelY = 0.0
 
 # Power management registers
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
 
-# Open Test File for Writing 
+# Open Test File for Writing
 
 f = open("testing.txt", "w+")
 
@@ -76,17 +76,12 @@ def getGyro():
         accel_yout_scaled = accel_yout / 16384.0
         accel_zout_scaled = accel_zout / 16384.0
 
-        yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled) 
-    return 
+        yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+    return
 
 t1=Thread(target=getGyro())
 t1.start()
 
 while True:
     print("Yrotation: %r.5"%yrot)
-
-
-
-
-
-
+    f.write("Yrotation: %dr.5\r\n"%yrot)
