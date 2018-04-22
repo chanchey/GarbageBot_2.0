@@ -79,3 +79,9 @@ def getGyro():
         yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     return
 
+t1=Thread(target=getGyro())
+t1.start()
+
+while True:
+    print("Yrotation: %r.5"%yrot)
+    f.write("Yrotation: %dr.5\r\n"%yrot)
