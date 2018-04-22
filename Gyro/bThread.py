@@ -114,7 +114,7 @@ def get_x_rotation(x, y, z):
     return math.degrees(radians)
 
 
-def getGyro()  # This function will be threaded into the main function
+def getGyro():  # This function will be threaded into the main function
 
     global yrot
     while True:
