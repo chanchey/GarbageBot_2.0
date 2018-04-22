@@ -84,10 +84,11 @@ def getGyro():
     return
 
 def getTime():
-    while rtime<30:
-        global rtime
+    global rtime
+    while rtime<30:    
         rtime=time.time()-iStart
         print ("Time Elapsed: %r"%rtime)
+        time.sleep(1)
     return 
 
 t1=Thread(target=getGyro)
