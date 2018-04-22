@@ -154,16 +154,16 @@ def forward():
         GPIO.output(A2, False)
         GPIO.output(B1, False)
         GPIO.output(B2, True)
-        motor1.ChangeDutyCycle(DC1)
-        motor2.ChangeDutyCycle(DC1)
+        motor1.ChangeDutyCycle(DC)
+        motor2.ChangeDutyCycle(DC)
         return
 def reverse():
         GPIO.output(A1, False)
         GPIO.output(A2, True)
         GPIO.output(B1, True)
         GPIO.output(B2, False)
-        motor1.ChangeDutyCycle(DC1)
-        motor2.ChangeDutyCycle(DC1)
+        motor1.ChangeDutyCycle(DC)
+        motor2.ChangeDutyCycle(DC)
         return
 def getDC():
     global DC
@@ -218,7 +218,7 @@ while True:
     print("Time Elapsed: %r.5"%rtime)
     time1 = time.time() - start
     f.write("DC1:%5r	yrot:%.5r	time:%.5r  Encoder1:%r   Encoder2:%r\r\n" % (
-    DC1, yrot, time1, encoderCounter1, encoderCounter2))
+    DC, yrot, time1, encoderCounter1, encoderCounter2))
     if yrot < .5:
         forward()
     elif yrot>.5:
