@@ -84,7 +84,7 @@ def getGyro():
     return
 
 def getTime():
-    while True:
+    while rtime<30:
         global rtime
         rtime=time.time()-iStart
         print ("Time Elapsed: %r"%rtime)
