@@ -12,18 +12,20 @@ from threading import Thread
 # open File to write Data
 f = open("Test1Data.txt", "w+")
 
-# Set GPIO up for the system
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
 
 # Encoder globals
 Ae1 = 18  # GPIO18 encoder
 Be1 = 15  # GPIO15 encoder
 Ae2 = 8  # GPIO08 encoder
 Be2 = 25  # GPIO25 encode
+
+# Set GPIO up for the system
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 # initialize coder counter
 encoderCounter1 = 0
