@@ -73,6 +73,8 @@ DC = 0.0
 # Gyro Initial Setup
 bus = smbus.SMBus(1)  # This is the I2C Bus that the Gyro will be using
 address = 0x68  # This is the address value read via the i2cdetect command
+power_mgmt_1 = 0x6b
+power_mgmt_2 = 0x6c
 
 # Now wake the 6050 up as it starts in sleep mode
 bus.write_byte_data(address, power_mgmt_1, 0)
