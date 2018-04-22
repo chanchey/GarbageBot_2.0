@@ -100,4 +100,3 @@ while rtime<30:
 return 
 
 
-
