@@ -32,7 +32,7 @@ clkLastState1 = GPIO.input(Ae1)
 clkLastState2 = GPIO.input(Ae2)
 
 # Yrotation Global Variable
-global yrot
+yrot = 0.0
 
 # Scaling Factor to level bot
 makeMeLevelY = 8
@@ -61,7 +61,7 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-# Modify motor Frequen
+# Modify motor Frequency
 motor1 = GPIO.PWM(D1, 2000)
 motor2 = GPIO.PWM(D2, 2000)
 motor1.start(0)
@@ -114,8 +114,9 @@ def get_x_rotation(x, y, z):
     return math.degrees(radians)
 
 
-def getGyro(): # This function will be threaded into the main function
+def getGyro()  # This function will be threaded into the main function
 
+    global yrot
     while True:
         # This is where the Gyro Data is collected and calculated
 
@@ -132,12 +133,11 @@ def getGyro(): # This function will be threaded into the main function
         accel_zout_scaled = accel_zout / 16384.0
 
         yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-        return yrot
+    return
 
-#Define Threads
 
-t1=Thread(target=getGyro())
-t1.start()
+
+
 
 while True:
 
@@ -228,7 +228,3 @@ while True:
     else:
         reverse()
 f.close()
-
-
-
-
