@@ -92,7 +92,7 @@ t1=Thread(target=getGyro)
 t2=Thread(target=getTime)
 t1.start()
 t2.start()
-while True:
+while rtime<30:
 
     print ("Time Elapsed: %r"%rtime)
     f.write("%r, %r, %r\r\n" %(yrot,ptime,rtime))
