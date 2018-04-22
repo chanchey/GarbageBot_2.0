@@ -16,7 +16,6 @@ power_mgmt_2 = 0x6c
 f = open("testing1.csv", "w+")
 
 # Set Time to see total time
-iStart = time.time()
 ptime=0.0
 rtime=0.0
 
@@ -85,6 +84,7 @@ def getGyro():
 
 def getTime():
     global rtime
+    iStart=time.time()
     while rtime<30:    
         rtime=time.time()-iStart
         print ("Time Elapsed: %r"%rtime)
@@ -97,9 +97,7 @@ t1.start()
 t2.start()
 while rtime<30:
     f.write("%r, %r, %r\r\n" %(yrot,ptime,rtime))
-
-
-
+    return 
 
 
 
