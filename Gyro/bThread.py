@@ -9,12 +9,6 @@ from RPi import GPIO
 from time import sleep
 from threading import Thread
 
-# Encoder globals
-Ae1 = 18  # GPIO18 encoder
-Be1 = 15  # GPIO15 encoder
-Ae2 = 8  # GPIO08 encoder
-Be2 = 25  # GPIO25 encode
-
 # open File to write Data
 f = open("Test1Data.txt", "w+")
 
@@ -24,6 +18,12 @@ GPIO.setup(Ae1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Ae2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(Be2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+# Encoder globals
+Ae1 = 18  # GPIO18 encoder
+Be1 = 15  # GPIO15 encoder
+Ae2 = 8  # GPIO08 encoder
+Be2 = 25  # GPIO25 encode
 
 # initialize coder counter
 encoderCounter1 = 0
@@ -83,11 +83,13 @@ bus.write_byte_data(address, power_mgmt_1, 0)
 sTime=time.time()
 rtime=0.0
 
+
+
 def runTime():
     global rtime
     while True:
         rtime=time.time()-sTime
-    return 
+    return
 
 
 # Define Definitions for Gyro
@@ -145,76 +147,56 @@ def getGyro():  # This function will be threaded into the main function
         yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     return
 
-t1=Thread(target=getGyro)
-t2=Thread(target=runTime)
-t1.start()
-t2.start()
-
-
-
-while True:
-
-    start = time.time()
-
-
-    def forward():
+def forward():
         GPIO.output(A1, True)
         GPIO.output(A2, False)
         GPIO.output(B1, False)
         GPIO.output(B2, True)
         motor1.ChangeDutyCycle(DC1)
         motor2.ChangeDutyCycle(DC1)
-
-
-    def reverse():
+        return
+def reverse():
         GPIO.output(A1, False)
         GPIO.output(A2, True)
         GPIO.output(B1, True)
         GPIO.output(B2, False)
         motor1.ChangeDutyCycle(DC1)
         motor2.ChangeDutyCycle(DC1)
+        return
+def getDC():
+    global DC
+    if 2 <= yrot <= 10:DC = 75
+    elif 10 < yrot <= 20:DC = 77
+    elif 20 < yrot <= 30:DC = 79.5
+    elif 30 < yrot <= 40:DC = 81
+    elif 40 < yrot <= 50:DC = 82
+    elif 50 < yrot <= 60:DC = 85
+    elif 60 < yrot:DC = 0
+    elif -2 >= yrot >= -10:DC = 75
+    elif -10 > yrot >= -20:DC = 77
+    elif -20 > yrot >= -30:DC = 83
+    elif -40 > yrot >= -40:DC = 84
+    elif -40 > yrot >= -50:DC = 85
+    elif -50 > yrot >= -60:DC = 86
+    elif yrot < -60:DC = 0
+    else:DC = 0
+    return
 
+t1=Thread(target=getGyro)
+t2=Thread(target=runTime)
+t3=Thread(target=getDC)
+t1.start()
+t2.start()
+t3.start()
 
-    def getDC():
-        if 2 <= yrot <= 10:
-            DC = 75
-        elif 10 < yrot <= 20:
-            DC = 77
-        elif 20 < yrot <= 30:
-            DC = 79.5
-        elif 30 < yrot <= 40:
-            DC = 81
-        elif 40 < yrot <= 50:
-            DC = 82
-        elif 50 < yrot <= 60:
-            DC = 85
-        elif 60 < yrot:
-            DC = 0
-        elif -2 >= yrot >= -10:
-            DC = 75
-        elif -10 > yrot >= -20:
-            DC = 77
-        elif -20 > yrot >= -30:
-            DC = 83
-        elif -40 > yrot >= -40:
-            DC = 84
-        elif -40 > yrot >= -50:
-            DC = 85
-        elif -50 > yrot >= -60:
-            DC = 86
-        elif yrot < -60:
-            DC = 0
-
-        else:
-            DC = 0
-        return DC
-
-
+while True:
+    
+    start=time.time()
+    
     clkState1 = GPIO.input(Ae1)
     dtState1 = GPIO.input(Be1)
     clkState2 = GPIO.input(Ae2)
     dtState2 = GPIO.input(Be2)
-
     if clkState1 != clkLastState1:
         if dtState1 != clkState1:
             encoderCounter1 += 1
@@ -230,16 +212,16 @@ while True:
     clkLastState1 = clkState1
     clkLastState2 = clkState2
 
-    DC1 = getDC()
+
     print("Time Elapsed: %r.5"%rtime)
     time1 = time.time() - start
     f.write("DC1:%5r	yrot:%.5r	time:%.5r  Encoder1:%r   Encoder2:%r\r\n" % (
     DC1, yrot, time1, encoderCounter1, encoderCounter2))
-    if yrot < 0:
+    if yrot < .5:
         forward()
-    else:
+    elif yrot>.5:
         reverse()
-    
+
 f.close()
 
 
