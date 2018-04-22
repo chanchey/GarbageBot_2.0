@@ -79,6 +79,16 @@ power_mgmt_2 = 0x6c
 # Now wake the 6050 up as it starts in sleep mode
 bus.write_byte_data(address, power_mgmt_1, 0)
 
+#Start Time of Program
+sTime=time.time()
+rtime=0.0
+
+def runTime():
+    global rtime
+    while True:
+        rtime=time.time()-sTime
+    return 
+
 
 # Define Definitions for Gyro
 def read_byte(adr):
@@ -136,7 +146,9 @@ def getGyro():  # This function will be threaded into the main function
     return
 
 t1=Thread(target=getGyro)
+t2=Thread(target=runTime)
 t1.start()
+t2.start()
 
 
 
@@ -219,13 +231,17 @@ while True:
     clkLastState2 = clkState2
 
     DC1 = getDC()
-    print(DC1, yrot, encoderCounter1, encoderCounter2)
+    print("Time Elapsed: %r.5"%rtime)
     time1 = time.time() - start
     f.write("DC1:%5r	yrot:%.5r	time:%.5r  Encoder1:%r   Encoder2:%r\r\n" % (
     DC1, yrot, time1, encoderCounter1, encoderCounter2))
-    # f.write("PWM:%.5r	yrot:%.5r	Encoder1:%r	Encoder2:%.5\r\n" %(DC1,yrot,encoderCounter1,encoderCounter2))
     if yrot < 0:
         forward()
     else:
         reverse()
+    
 f.close()
+
+
+
+
