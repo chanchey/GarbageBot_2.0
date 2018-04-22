@@ -85,7 +85,7 @@ def getGyro():
 
 def getTime():
     global rtime
-    rtime=iStart-time.time()
+    rtime=time.time()-iStart
 
 
 t1=Thread(target=getGyro)
