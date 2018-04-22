@@ -97,6 +97,8 @@ t1.start()
 t2.start()
 while rtime<30:
     f.write("%r, %r, %r\r\n" %(yrot,ptime,rtime))
-return 
+
+t1.end()
+t2.end()
 
 
