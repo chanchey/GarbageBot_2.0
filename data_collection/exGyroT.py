@@ -87,6 +87,7 @@ def getTime():
     while True:
         global rtime
         rtime=time.time()-iStart
+        print ("Time Elapsed: %r"%rtime)
     return 
 
 t1=Thread(target=getGyro)
@@ -94,8 +95,6 @@ t2=Thread(target=getTime)
 t1.start()
 t2.start()
 while rtime<30:
-
-    print ("Time Elapsed: %r"%rtime)
     f.write("%r, %r, %r\r\n" %(yrot,ptime,rtime))
 
 
