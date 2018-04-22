@@ -84,9 +84,10 @@ def getGyro():
     return
 
 def getTime():
-    global rtime
-    rtime=time.time()-iStart
-
+    while True:
+        global rtime
+        rtime=time.time()-iStart
+    return 
 
 t1=Thread(target=getGyro)
 t2=Thread(target=getTime)
