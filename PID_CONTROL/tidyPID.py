@@ -40,7 +40,7 @@ GPIO.add_event_detect(encoderA2, GPIO.RISING)
 GPIO.add_event_detect(encoderB2, GPIO.RISING)
 
 # Global Variables this will modify
-yrot = 0.0;
+yrot = 0
 
 # Scaling Factor to level bot
 makeMeLevelY = 6
@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=70
+KP=75
 target=0
 def getDC():
     global DC
