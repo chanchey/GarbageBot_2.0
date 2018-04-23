@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=200
+KP=100
 KD=10
 target=0
 prev_errorb = 0
@@ -115,7 +115,7 @@ def getDC():
     errorb=target+abs(yrot)
     DC +=errorb*KP
     DC += (errorb*KP)+(prev_errorb*KD)
-    time.sleep(.1)
+    time.sleep(.01)
     prev_errorb=errorb
     if DC >= 100:
         DC = 100
