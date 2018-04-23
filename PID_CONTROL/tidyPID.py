@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=60
+KP=50
 KD=6
 target=0
 prev_errorb = 0
