@@ -3,12 +3,12 @@ import RPi.GPIO as GPIO
 
 f=open("encoder.txt","w+")
 
-GPIO.setmode(GPIO.BOARD) ##Physical pins
+GPIO.setmode(GPIO.BCM) ## GPIO
 GPIO.setwarnings(False)
 
 #Encoder variables
-encoderA1=38 ## Physical pins - channel A
-encoderB1=40 ## Physical pins - channel B
+encoderA1=18 ## GPIO pins - channel A
+encoderB1=15 ## GPIO pins - channel B
 olda1c = 0
 a1c = 0
 direction1 = 'X' ## Neither forward or backward
