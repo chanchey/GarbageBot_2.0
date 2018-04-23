@@ -44,7 +44,7 @@ int yrot
 yrot=0
 
 # Scaling Factor to level bot
-makeMeLevelY = 6
+makeMeLevelY = 9
 
 # Controller Variables
 A1 = 6  # M3
