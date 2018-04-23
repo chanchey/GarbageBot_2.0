@@ -113,7 +113,6 @@ def getDC():
     global DC
     global prev_errorb
     errorb=target+abs(yrot)
-    DC +=errorb*KP
     DC += (errorb*KP)+(prev_errorb*KD)
     time.sleep(.003)
     prev_errorb=errorb
