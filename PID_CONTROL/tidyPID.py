@@ -106,8 +106,8 @@ def stop():
 
 #PID CONSTANTS
 KP=30.5
-KD=.1*KP
-KI=KD/2
+KD=0
+KI=0
 target=0
 prev_errorb = 0
 sumError=0.0
