@@ -194,6 +194,6 @@ while rTime<15:
         reverse()
     elif yrot == 0:
         stop()
-    rtime=time.time()-Itime
+    rTime=time.time()-Itime
 f.close()
 sys.end()
