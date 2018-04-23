@@ -40,7 +40,6 @@ GPIO.add_event_detect(encoderA2, GPIO.RISING)
 GPIO.add_event_detect(encoderB2, GPIO.RISING)
 
 # Global Variables this will modify
-int yrot
 yrot=0
 
 # Scaling Factor to level bot
