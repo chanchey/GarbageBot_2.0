@@ -106,10 +106,10 @@ def stop():
 
 #PID CONSTANTS
 KP=10
-KD=.25
+KD=.01
 KI=0
 target=0
-prev_errorb = 0
+prev_errorb =0.0
 sumError=0.0
 def getDC():
     global DC
