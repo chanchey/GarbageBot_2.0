@@ -106,11 +106,10 @@ def stop():
 
 #PID CONSTANTS
 KP=70
+target=0
 def getDC():
     global DC
-    DC=0.0
-    target=0
-    errorb=target-abs(yrot)
+    errorb=target+abs(yrot)
     DC +=errorb*KP
     if DC>=100:
         DC=100
