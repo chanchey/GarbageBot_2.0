@@ -106,19 +106,24 @@ def stop():
 
 #PID CONSTANTS
 KP=60
+KD=6
 target=0
+prev_errorb = 0
 def getDC():
     global DC
+    global prev_errorb
     errorb=target+abs(yrot)
     DC +=errorb*KP
-    if DC>=100:
-        DC=100
-    elif DC<=0:
-        DC=0
-    else: 
-        DC=DC
+    DC += (errorb*KP)+(prev_errorb*KD)
+    time.sleep(.001)
+    prev_errorb=errorb
+    if DC >= 100:
+        DC = 100
+    elif DC <= 0:
+        DC = 0
+    else:
+        DC = DC
     return
-
 
 def getGyro():
     global yrot
