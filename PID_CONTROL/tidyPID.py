@@ -187,7 +187,6 @@ while rTime<15:
     getDC()
 
     print(DC, yrot)
-    time1 = time.time() - start
     f.write("%r, %r\r\n" % (DC, yrot))
     if yrot < 0:
         forward()
