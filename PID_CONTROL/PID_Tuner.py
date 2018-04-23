@@ -188,6 +188,7 @@ rTime = 0.0
 for i in range(0, 100, 10):
     Itime = time.time()
     global rTime
+    rTime=0.0
     while rTime < 10:
         rTime=0.0
         KP = i
