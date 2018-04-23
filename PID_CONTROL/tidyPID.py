@@ -106,7 +106,7 @@ def stop():
 
 #PID CONSTANTS
 KP=60
-KD=6
+KD=1
 target=0
 prev_errorb = 0
 def getDC():
@@ -115,7 +115,7 @@ def getDC():
     errorb=target+abs(yrot)
     DC +=errorb*KP
     DC += (errorb*KP)+(prev_errorb*KD)
-    time.sleep(.01)
+    time.sleep(.005)
     prev_errorb=errorb
     if DC >= 100:
         DC = 100
