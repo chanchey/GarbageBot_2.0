@@ -178,11 +178,11 @@ def getGyro():
         yrot - yrotI
     return
 
-
-while True:
-
-    start = time.time()
-
+Itime=time.time()
+rTime=0.0
+while rTime<15:
+    
+    global rTime
     getGyro()
     getDC()
 
@@ -195,5 +195,6 @@ while True:
         reverse()
     elif yrot == 0:
         stop()
+    rtime=time.time()-Itime
 f.close()
 sys.end()
