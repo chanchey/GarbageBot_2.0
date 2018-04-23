@@ -105,8 +105,8 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=30
-KD=5
+KP=25
+KD=2
 target=0
 prev_errorb = 0
 def getDC():
