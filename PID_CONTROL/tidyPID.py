@@ -109,7 +109,8 @@ KP=70
 def getDC():
     global DC
     target=0
-    errorb=target-yrot
+    yrot1=abs(yrot)
+    errorb=target-yrot1
     DC +=errorb*KP
     DC=max(min(100,DC),0)
     return
