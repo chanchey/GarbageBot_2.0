@@ -184,12 +184,11 @@ def getGyro():
 
 
 makeMeLevelY = yrot
-
+rTime = 0.0
 for i in range(0, 100, 10):
     Itime = time.time()
-    rTime = 0.0
+    global rTime
     while rTime < 10:
-        global rTime
         KP = i
         getGyro()
         getDC()
