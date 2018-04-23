@@ -178,7 +178,7 @@ while True:
     getGyro()
     getDC()
 
-    print(DC, yrot)
+    print(DC, yrot, yrot1)
     time1 = time.time() - start
     f.write("%r, %r\r\n" % (DC, yrot))
     if yrot < 0:
