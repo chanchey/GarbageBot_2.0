@@ -4,7 +4,7 @@ import smbus
 import math
 import time
 import RPi.GPIO as GPIO
-import sys 
+import sys
 
 from RPi import GPIO
 from time import sleep
@@ -39,13 +39,13 @@ GPIO.add_event_detect(encoderB1, GPIO.RISING)
 GPIO.add_event_detect(encoderA2, GPIO.RISING)
 GPIO.add_event_detect(encoderB2, GPIO.RISING)
 
-# Global Variables this will modify 
+# Global Variables this will modify
 yrot = 0.0;
 
-# Scaling Factor to level bot 
+# Scaling Factor to level bot
 makeMeLevelY = 6
 
-# Controller Variables 
+# Controller Variables
 A1 = 6  # M3
 A2 = 13  # M4
 B1 = 20  # M1
@@ -136,13 +136,13 @@ def getDC():
             DC = 0
     else:
             DC = 0
-    return 
+    return
 
 def getGyro():
-    
-    global yrot 
-    yrotI=yrot 
-    
+
+    global yrot
+    yrotI=yrot
+
     def read_byte(adr):
         return bus.read_byte_data(address, adr)
 
@@ -185,12 +185,12 @@ def getGyro():
 
     xrot = get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-    
+
     deltaY=yrotI-yrot
     if deltaY>.35:
         yrot = yrot + makeMeLevelY
     else: yrot-yrotI
-    return 
+    return
 
 while True:
 
@@ -198,24 +198,11 @@ while True:
 
     getGyro()
     getDC()
-    
-    if GPIO.event_detected(encoderA1) == True and GPIO.event_detected(encoderB1) != True:
-        motorDir1 = 'forward'
-    if GPIO.event_detected(encoderA1) != True and GPIO.event_detected(encoderB1) == True:
-        motorDir1 = 'reverse'
-    if GPIO.event_detected(encoderA2) != True and GPIO.event_detected(encoderB2) == True:
-        motorDir2 = 'reverse'
-    if GPIO.event_detected(encoderA2) == True and GPIO.event_detected(encoderB2) != True:
-        motorDir2 = 'forward'
 
-    shitA1 = GPIO.event_detected(encoderA1)
-    shitA2 = GPIO.event_detected(encoderA2)
-    shitB1 = GPIO.event_detected(encoderB1)
-    shitB2 = GPIO.event_detected(encoderB2)
+   
     print(DC, yrot)
     time1 = time.time() - start
-    f.write("A1:%r	B1:%r	motor1:%r	A2:%r	B2:%r	motor2:%r\r\n" % (
-    shitA1, shitB1, motorDir1, shitA2, shitB2, motorDir2))
+    f.write("%r, %r\r\n"%(DC,yrot))
     if yrot < 0:
         forward()
     elif yrot > 0:
