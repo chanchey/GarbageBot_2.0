@@ -43,7 +43,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 yrot=0
 
 # Scaling Factor to level bot
-makeMeLevelY = 9
+makeMeLevelY = 8
 
 # Controller Variables
 A1 = 6  # M3
@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=25
+KP=50
 KD=2
 target=0
 prev_errorb = 0
@@ -115,7 +115,7 @@ def getDC():
     errorb=target+abs(yrot)
     DC +=errorb*KP
     DC += (errorb*KP)+(prev_errorb*KD)
-    time.sleep(.005)
+    time.sleep(.003)
     prev_errorb=errorb
     if DC >= 100:
         DC = 100
