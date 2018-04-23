@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=25
+KP=30.5
 KD=.1*KP
 KI=KD/2
 target=0
