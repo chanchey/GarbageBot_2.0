@@ -43,7 +43,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 yrot=0
 
 # Scaling Factor to level bot
-makeMeLevelY = 9
+makeMeLevelY = 6
 
 # Controller Variables
 A1 = 6  # M3
@@ -105,8 +105,8 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=60
-KD=6
+KP=55
+KD=.1*KP
 target=0
 prev_errorb = 0
 def getDC():
