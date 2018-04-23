@@ -108,12 +108,14 @@ def stop():
 KP=70
 def getDC():
     global DC
+    DC=0.0
     target=0
-    yrot1=abs(yrot)
-    errorb=target-yrot1
+    errorb=target-abs(yrot)
     DC +=errorb*KP
-    if DC>100:
+    if DC>=100:
         DC=100
+    elif DC<=0
+        DC=0
     else: 
         DC=DC
     return
