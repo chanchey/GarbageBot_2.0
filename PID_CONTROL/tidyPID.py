@@ -114,7 +114,7 @@ def getDC():
     DC +=errorb*KP
     if DC>=100:
         DC=100
-    elif DC<=0
+    elif DC<=0:
         DC=0
     else: 
         DC=DC
