@@ -107,15 +107,19 @@ def stop():
 #PID CONSTANTS
 KP=30
 KD=.1*KP
+KI=KD/2
 target=0
 prev_errorb = 0
+sumError=0.0
 def getDC():
     global DC
     global prev_errorb
+    global sumError
     errorb=target+abs(yrot)
-    DC += (errorb*KP)+(prev_errorb*KD)
+    DC += (errorb*KP)+(prev_errorb*KD)+(sumError*KI)
     time.sleep(.003)
     prev_errorb=errorb
+    sumError+=errorb
     if DC >= 100:
         DC = 100
     elif DC <= 0:
