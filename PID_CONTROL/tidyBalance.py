@@ -104,39 +104,24 @@ def stop():
     motor1.ChangeDutyCycle(0)
     motor2.ChangeDutyCycle(0)
 
-def getDC():
-    global DC
-    if 1 <= yrot <= 1.5:
-            DC = 92
-    elif 1.5 < yrot <= 2:
-            DC = 95
-    elif 2 < yrot <= 3.5:
-            DC = 98
-    elif 3.5 < yrot <= 40:
-            DC = 100
-    elif 40 < yrot <= 50:
-            DC = 100
-    elif 50 < yrot <= 60:
-            DC = 100
-    elif 60 < yrot:
-            DC = 0
-    elif -1.25 >= yrot >= -1.5:
-            DC = 70
-    elif -1.5 > yrot >= -2:
-            DC = 80
-    elif -2 > yrot >= -3:
-            DC = 95
-    elif -3 > yrot >= -40:
-            DC = 100
-    elif -40 > yrot >= -50:
-            DC = 100
-    elif -50 > yrot >= -60:
-            DC = 100
-    elif yrot < -60:
-            DC = 0
-    else:
-            DC = 0
-    return
+def getDC():	
+	global DC
+    	if 1<=yrot<=1.25:DC=90
+	elif 1.25<yrot<=1.75:DC=92
+	elif 1.75<yrot<=2.5:DC=94
+	elif 2.5<yrot<=3:DC=100
+	elif 3<yrot<=50:DC=100
+	elif 50<yrot<=60:DC=100
+	elif 60<yrot:DC=0
+	elif -1.25>=yrot>=-1.5:DC=75
+	elif -1.5>yrot>=-1.75: DC=82.5
+	elif -1.75>yrot>=-2.5:DC=95
+	elif -2.5>yrot>=-40:DC=100
+	elif -40>yrot>=-50:DC=100
+	elif -50>yrot>=-60:DC=100
+	elif yrot<-60: DC=0
+	else: DC=0
+	return
 
 def getGyro():
 
@@ -198,22 +183,6 @@ while True:
 
     getGyro()
     getDC()
-		if 1<=yrot<=1.25:DC=90
-		elif 1.25<yrot<=1.75:DC=92
-		elif 1.75<yrot<=2.5:DC=94
-		elif 2.5<yrot<=3:DC=100
-		elif 3<yrot<=50:DC=100
-		elif 50<yrot<=60:DC=100
-		elif 60<yrot:DC=0
-		elif -1.25>=yrot>=-1.5:DC=75
-		elif -1.5>yrot>=-1.75: DC=82.5
-		elif -1.75>yrot>=-2.5:DC=95
-		elif -2.5>yrot>=-40:DC=100
-		elif -40>yrot>=-50:DC=100
-		elif -50>yrot>=-60:DC=100
-		elif yrot<-60: DC=0
-		else: DC=0
-		return DC
    
     print(DC, yrot)
     time1 = time.time() - start
