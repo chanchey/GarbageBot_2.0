@@ -106,7 +106,7 @@ def stop():
 
 #PID CONSTANTS
 KP=45
-KD=0
+KD=10
 target=0
 prev_errorb = 0
 def getDC():
