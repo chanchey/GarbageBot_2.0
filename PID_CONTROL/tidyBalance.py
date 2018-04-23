@@ -198,7 +198,7 @@ while True:
 
     getGyro()
     getDC()
-        if 1<=yrot<=1.25:DC=90
+	if 1<=yrot<=1.25:DC=90
 	elif 1.25<yrot<=1.75:DC=92
 	elif 1.75<yrot<=2.5:DC=94
 	elif 2.5<yrot<=3:DC=100
