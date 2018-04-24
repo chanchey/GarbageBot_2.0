@@ -41,7 +41,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 
 # Global Variables this will modify
 yrot = 0
-makeMeLevelY = 7
+makeMeLevelY = 9
 
 # Controller Variables
 A1 = 6  # M3
