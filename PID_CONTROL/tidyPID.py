@@ -43,7 +43,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 yrot=0
 
 # Scaling Factor to level bot
-makeMeLevelY = 5
+makeMeLevelY = 6
 
 # Controller Variables
 A1 = 6  # M3
@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=1
+KP=8
 KD=0
 KI=0
 target=0
@@ -174,7 +174,7 @@ def getGyro():
 
     xrot = get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-
+    return
     
 
 Itime=time.time()
