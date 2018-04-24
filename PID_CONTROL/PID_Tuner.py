@@ -175,8 +175,11 @@ def getGyro():
 
     xrot = get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
-
     
+    gyroSum=0.0
+    for i in range(5)
+        gyroSum+=getGyro
+    yrot=(gyroSum/5)+makeMeLevelY
     return
 
 for i in range(0, 100, 10):
