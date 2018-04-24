@@ -198,7 +198,7 @@ for i in range(0, 100, 10):
         elif yrot == 0:
             stop()
         rTime = time.time() - Itime
-
+        print(i, rTime, yrot, makeMeLevelY)
 
 f.close()
 sys.exit()
