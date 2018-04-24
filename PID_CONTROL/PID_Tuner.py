@@ -41,6 +41,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 
 # Global Variables this will modify
 yrot = 0
+makeMeLevelY = 7
 
 # Controller Variables
 A1 = 6  # M3
@@ -182,8 +183,6 @@ def getGyro():
         yrot = yrotI
     return
 
-getGyro()
-makeMeLevelY = yrot
 for i in range(0, 100, 10):
     Itime = time.time()
     rTime=0.0
