@@ -176,11 +176,7 @@ def getGyro():
     xrot = get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     yrot = get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
 
-    deltaY = yrotI - yrot
-    if deltaY > .35:
-        yrot = yrot + makeMeLevelY
-    else:
-        yrot = yrotI
+    
     return
 
 for i in range(0, 100, 10):
