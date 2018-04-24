@@ -182,7 +182,7 @@ def getGyro():
     yrot=(gyroSum/5)+makeMeLevelY
     return
 
-for i in range(0, 10, 1):
+for i in range(0, 10, .5):
     Itime = time.time()
     rTime=0.0
     while rTime < 10:
