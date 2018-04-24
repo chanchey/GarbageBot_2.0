@@ -43,7 +43,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 yrot=0
 
 # Scaling Factor to level bot
-makeMeLevelY = 5
+makeMeLevelY = 6
 
 # Controller Variables
 A1 = 6  # M3
@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=1
+KP=7
 KD=KP/10
 KI=KD/2
 target=0
