@@ -178,7 +178,7 @@ def getGyro():
     
     gyroSum=0.0
     for i in range(5):
-        gyroSum+=getGyro
+        gyroSum+=yrot
     yrot=(gyroSum/5)+makeMeLevelY
     return
 
