@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=7
+KP=8
 KD=KP/10
 KI=KD/2
 target=0
@@ -193,7 +193,7 @@ while rTime<15:
     f.write("%r, %r\r\n" % (DC, yrot))
     if yrot < 3:
         forward()
-    elif yrot > 1:
+    elif yrot > 0:
         reverse()
     elif yrot == 0:
         stop()
