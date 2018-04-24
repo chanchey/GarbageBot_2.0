@@ -191,9 +191,9 @@ while rTime<15:
     
     print(DC, yrot)
     f.write("%r, %r\r\n" % (DC, yrot))
-    if yrot < 2:
+    if yrot < 3:
         forward()
-    elif yrot > 0:
+    elif yrot > 1:
         reverse()
     elif yrot == 0:
         stop()
