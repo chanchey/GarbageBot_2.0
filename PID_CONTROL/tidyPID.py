@@ -179,7 +179,7 @@ def getGyro():
     if deltaY > .35:
         yrot = yrot + makeMeLevelY
     else:
-        yrot - yrotI
+        yrot = yrotI
     return
 
 Itime=time.time()
