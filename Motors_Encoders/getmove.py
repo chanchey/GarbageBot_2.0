@@ -31,7 +31,7 @@ motor2.ChangeDutyCycle(0)
 #curses.cbreak()
 #screen.keypad(True)
 
-def GetMove()
+def GetMove():
     def getch():
         fd = sys.stdin.fileno()
         old_settings = termios.tcgetattr(fd)
