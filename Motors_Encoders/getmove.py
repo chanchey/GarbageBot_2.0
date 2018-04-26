@@ -102,3 +102,4 @@ def GetMove():
     return 
 while True:
     GetMove()
+sys.exit()
