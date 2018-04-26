@@ -100,5 +100,5 @@ def GetMove():
     motor2.ChangeDutyCycle(0)
     char = ""
     return 
-while true:
+while True:
     GetMove()
