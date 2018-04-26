@@ -73,10 +73,7 @@ def GetMove():
 
 
     char = getch()
-    if char == "q":
-        print 'Program Ended'
-        break
-    elif char == "w":
+    if char == "w":
         forward()
         motor1.ChangeDutyCycle(50)
         motor2.ChangeDutyCycle(80)
