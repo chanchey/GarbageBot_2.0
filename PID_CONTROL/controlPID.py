@@ -214,7 +214,7 @@ while True:
     getDC()
 
     print(DC, yrot)
-    time1 = time.time() - start
+    #time1 = time.time() - start
     f.write("%r, %r\r\n" % (DC, yrot))
     if yrot < 0:
         forward()
@@ -252,7 +252,7 @@ while True:
     motor1.ChangeDutyCycle(0)
     motor2.ChangeDutyCycle(0)        
     char = "" 
-    start = time.time()
+    #start = time.time()
 f.close()
 sys.end()
 
