@@ -5,7 +5,7 @@ import math
 import time
 import RPi.GPIO as GPIO
 import sys
-
+import time, sys, tty, termios
 from RPi import GPIO
 from time import sleep
 
@@ -76,7 +76,15 @@ motor2.start(0)
 
 # Modify
 DC = 0.0
-
+def getch():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(sys.stdin.fileno())
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
 
 def forward():
     GPIO.output(A1, True)
@@ -95,7 +103,22 @@ def reverse():
     motor1.ChangeDutyCycle(DC)
     motor2.ChangeDutyCycle(DC)
 
+def left():
+    GPIO.output(A1, True)
+    GPIO.output(A2, False)
+    GPIO.output(B1, True)
+    GPIO.output(B2, False)
+    motor1.ChangeDutyCycle(DC)
+    motor2.ChangeDutyCycle(DC)        
 
+def right():
+    GPIO.output(A1, False)
+    GPIO.output(A2, True)
+    GPIO.output(B1, False)
+    GPIO.output(B2, True)
+    motor1.ChangeDutyCycle(DC)
+    motor2.ChangeDutyCycle(DC)
+    
 def stop():
     GPIO.output(A1, False)
     GPIO.output(A2, False)
@@ -103,6 +126,11 @@ def stop():
     GPIO.output(B2, False)
     motor1.ChangeDutyCycle(0)
     motor2.ChangeDutyCycle(0)
+
+GPIO.output(A1, False)
+GPIO.output(A2, False)
+GPIO.output(B1, False)
+GPIO.output(B2, False)
 
 #PID CONSTANTS
 KP=80
@@ -181,7 +209,6 @@ def getGyro():
 
 while True:
 
-    start = time.time()
 
     getGyro()
     getDC()
@@ -195,6 +222,37 @@ while True:
         reverse()
     elif yrot == 0:
         stop()
+    char = getch()
+    if char == "q":
+        print 'Program Ended'
+        break
+    elif char == "w":
+        forward()
+        motor1.ChangeDutyCycle(DC)
+        motor2.ChangeDutyCycle(DC)
+                
+                
+    elif char == "s":   
+        reverse()
+        motor1.ChangeDutyCycle(DC)
+        motor2.ChangeDutyCycle(DC)
+                         
+                
+    elif char == "d":
+        right()
+        motor1.ChangeDutyCycle(DC)
+        motor2.ChangeDutyCycle(DC)
+                
+    elif char == "a":
+        left()
+        motor1.ChangeDutyCycle(DC)
+        motor2.ChangeDutyCycle(DC)
+                
+    time.sleep(.1)        
+    motor1.ChangeDutyCycle(0)
+    motor2.ChangeDutyCycle(0)        
+    char = "" 
+    start = time.time()
 f.close()
 sys.end()
 
