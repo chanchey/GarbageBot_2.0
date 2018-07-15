@@ -43,7 +43,7 @@ GPIO.add_event_detect(encoderB2, GPIO.RISING)
 yrot=0
 
 # Scaling Factor to level bot
-makeMeLevelY = 6
+makeMeLevelY = 3
 
 # Controller Variables
 A1 = 6  # M3
@@ -69,8 +69,8 @@ GPIO.output(A2, False)
 GPIO.output(B1, False)
 GPIO.output(B2, False)
 
-motor1 = GPIO.PWM(D1, 6000)
-motor2 = GPIO.PWM(D2, 6000)
+motor1 = GPIO.PWM(D1, 500)
+motor2 = GPIO.PWM(D2, 500)
 motor1.start(0)
 motor2.start(0)
 
@@ -105,7 +105,7 @@ def stop():
     motor2.ChangeDutyCycle(0)
 
 #PID CONSTANTS
-KP=2
+KP=1
 KD=KP/10
 KI=KD/2
 target=0
